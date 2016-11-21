@@ -110,7 +110,8 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
                 if let cell = self.tableView.cellForRow(at: indexPath) {
                     
                     let controller = (segue.destination as! UINavigationController).topViewController as! FruitDetailViewController
-                    controller.detailItem = cell.textLabel?.text
+                    controller.fruitNameItem = cell.textLabel?.text
+                    controller.fruitSectionItem = objectArray[indexPath.section].sectionName
                     controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                     controller.navigationItem.leftItemsSupplementBackButton = true
                     tableView.deselectRow(at: indexPath, animated: true)
@@ -132,13 +133,7 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
         
         cell.textLabel?.text = objectArray[indexPath.section].sectionObjects[indexPath.row].name
         cell.textLabel?.textColor = UIColor.darkGray
-        
-//        if(objectArray[indexPath.section].sectionName == "Berries"){
-//            cell.FruitCellImage.backgroundColor = UIColor.init(red: 30/255.0, green: 90/255.0, blue: 225/255.0, alpha: 1.0)
-//        } else {
-//            cell.FruitCellImage.backgroundColor = UIColor.init(red: 245/255.0, green: 90/255.0, blue: 65/255.0, alpha: 1.0)
-//        }
-        
+                
         return cell
     }
     

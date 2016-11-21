@@ -18,7 +18,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -163,7 +163,7 @@
         <scene sceneID="r7l-gg-dq7">
             <objects>
                 <navigationController storyboardIdentifier="vegetableDetailNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vC3-pB-5Vb" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="DjV-YW-jjY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -181,7 +181,7 @@
                 <navigationController storyboardIdentifier="fruitsListNC" title="VegetablesNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f92-Of-Kco" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Vegies" image="Artichoke" id="pvK-Kf-xuW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Jw0-vl-A8P">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Jw0-vl-A8P">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -236,7 +236,8 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="dpG-UW-mZq"/>
                     <connections>
-                        <outlet property="detailDescriptionLabel" destination="7bS-Sl-usV" id="UOe-eY-bnt"/>
+                        <outlet property="fruitImage" destination="jSP-vp-tGx" id="bU7-OW-Lv5"/>
+                        <outlet property="fruitNameLabel" destination="7bS-Sl-usV" id="hQg-cS-c9Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXl-FS-3Pe" sceneMemberID="firstResponder"/>
@@ -266,7 +267,7 @@
                 <navigationController storyboardIdentifier="welcomeNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3xa-XS-VAV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Welcome" image="Acc" id="8Ic-kR-6l5"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="782-rF-Tsu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="782-rF-Tsu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -317,7 +318,7 @@
         <scene sceneID="Aya-2y-pRX">
             <objects>
                 <navigationController storyboardIdentifier="fruitDetailNC" id="97f-Re-r57" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Nu5-h8-BbF">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Nu5-h8-BbF">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

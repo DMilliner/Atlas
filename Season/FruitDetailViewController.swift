@@ -10,24 +10,45 @@ import UIKit
 
 class FruitDetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var fruitNameLabel: UILabel!
+    @IBOutlet weak var fruitImage: UIImageView!
 
-    func configureView() {
+    func configureNameView() {
         // Update the user interface for the detail item.
-        if let detail = self.detailItem {
-            print("-> detail " + detail.description)
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+        if let fruitName = self.fruitNameItem {
+            print("-> Fruit Name " + fruitName.description)
+            if let label = self.fruitNameLabel {
+                label.text = fruitName.description
             }
-        } else {
+        }else {
             self.navigationController!.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "fruitsList") as UIViewController, animated: false)
         }
     }
     
+    func configureImageView() {
+        // Update the user interface for the detail item.
+        if let fruitSection = self.fruitSectionItem {
+            print("-> Fruit Section " + fruitSection.description)
+            if let image = self.fruitImage {
+                
+                if(fruitSection == "Berries"){
+                    image.backgroundColor = UIColor.init(red: 30/255.0, green: 90/255.0, blue: 225/255.0, alpha: 1.0)
+                } else {
+                    image.backgroundColor = UIColor.init(red: 245/255.0, green: 90/255.0, blue: 65/255.0, alpha: 1.0)
+                }
+                
+            }
+        }else {
+            self.navigationController!.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "fruitsList") as UIViewController, animated: false)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
+        self.configureNameView()
+        self.configureImageView()
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,10 +56,17 @@ class FruitDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    var detailItem: String? {
+    var fruitNameItem: String? {
         didSet {
             // Update the view.
-            self.configureView()
+            self.configureNameView()
+        }
+    }
+    
+    var fruitSectionItem: String? {
+        didSet {
+            // Update the view.
+            self.configureImageView()
         }
     }
 }
