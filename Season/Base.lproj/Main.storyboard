@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KqX-cX-Max">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--VegetablesNC-->
+        <scene sceneID="pY4-Hu-kfo">
+            <objects>
+                <navigationController storyboardIdentifier="vegetablesListNC" title="VegetablesNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Vegies" image="Artichoke" id="T7t-3z-Qih"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="9yL-va-nvV">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="x4Q-hU-L28" kind="relationship" relationship="rootViewController" id="KS3-zj-3ny"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-38" y="-630"/>
+        </scene>
+        <!--vegetablesList-->
+        <scene sceneID="6xn-cf-3AT">
+            <objects>
+                <viewController storyboardIdentifier="vegetablesList" title="vegetablesList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x4Q-hU-L28" customClass="VegetablesViewController" customModule="Season" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SJp-Sl-MlH"/>
+                        <viewControllerLayoutGuide type="bottom" id="R57-Gb-loX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W3N-Qf-Fee">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" allowsMultipleSelection="YES" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dOM-k4-AnE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="48" id="HR6-ri-P3a">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HR6-ri-P3a" id="0zp-Qh-W2I">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="ol">
+                                            <accessibilityTraits key="traits" none="YES"/>
+                                        </accessibility>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showVegetableDetail" id="62o-i1-zbl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dOM-k4-AnE" firstAttribute="leading" secondItem="W3N-Qf-Fee" secondAttribute="leading" id="Swo-Yc-0gk"/>
+                            <constraint firstItem="dOM-k4-AnE" firstAttribute="bottom" secondItem="R57-Gb-loX" secondAttribute="top" constant="49" id="a3n-Qd-ZtE"/>
+                            <constraint firstItem="dOM-k4-AnE" firstAttribute="centerY" secondItem="W3N-Qf-Fee" secondAttribute="centerY" id="xO1-Nl-4XV"/>
+                            <constraint firstItem="dOM-k4-AnE" firstAttribute="centerX" secondItem="W3N-Qf-Fee" secondAttribute="centerX" id="xbR-Wq-eXO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Vegetables" id="G96-D1-iOj"/>
+                    <connections>
+                        <outlet property="tableView" destination="dOM-k4-AnE" id="Tne-QR-5UD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bmU-AC-Ww5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752.79999999999995" y="-630.13493253373315"/>
+        </scene>
+        <!--vegetableDetail-->
+        <scene sceneID="yUG-lL-AsK">
+            <objects>
+                <viewController storyboardIdentifier="vegetableDetail" title="vegetableDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JEX-9P-axG" customClass="VegetableDetailViewController" customModule="Season" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
+                        <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="vegetableDetail" id="svH-Pt-448">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
+                                <rect key="frame" x="75" y="316" width="225" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Idh-Lo-jd4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0XM-y9-sOw" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="ESg-0E-VWZ"/>
+                            <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="xQv-wf-Ov3"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="204.64767616191907"/>
+        </scene>
+        <!--Custom Tab Bar Controller-->
+        <scene sceneID="vZk-Np-ARD">
+            <objects>
+                <tabBarController storyboardIdentifier="tabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KqX-cX-Max" customClass="CustomTabBarController" customModule="Season" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ilQ-po-04z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="H1p-Uh-vWS" kind="relationship" relationship="viewControllers" id="cwr-zk-R9m"/>
+                        <segue destination="3xa-XS-VAV" kind="relationship" relationship="viewControllers" id="kBM-Z7-qEs"/>
+                        <segue destination="fFg-Y6-2h2" kind="relationship" relationship="viewControllers" id="tgo-Qq-kcf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jpL-UI-utp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2038" y="711"/>
+        </scene>
+        <!--vegetablesSplitView-->
+        <scene sceneID="Nki-YV-4Qg">
+            <objects>
+                <splitViewController storyboardIdentifier="vegetablesSplitView" title="vegetablesSplitView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H1p-Uh-vWS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Vegetables" image="Acc" id="cVd-3C-EL4"/>
+                    <toolbarItems/>
+                    <connections>
+                        <segue destination="RMx-3f-FxP" kind="relationship" relationship="masterViewController" id="BlO-5A-QYV"/>
+                        <segue destination="vC3-pB-5Vb" kind="relationship" relationship="detailViewController" id="Tll-UG-LXB"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Oi-B1e" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-856" y="-330"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="r7l-gg-dq7">
+            <objects>
+                <navigationController storyboardIdentifier="vegetableDetailNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vC3-pB-5Vb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="GKi-kA-LjT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-40" y="205"/>
+        </scene>
+        <!--VegetablesNC-->
+        <scene sceneID="sYW-39-wrF">
+            <objects>
+                <navigationController storyboardIdentifier="fruitsListNC" title="VegetablesNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f92-Of-Kco" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Vegies" image="Artichoke" id="pvK-Kf-xuW"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Jw0-vl-A8P">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="7TN-R6-2LP">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Uah-Ag-hla" kind="relationship" relationship="rootViewController" id="eob-XC-sFh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lJE-zb-u0S" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39" y="906"/>
+        </scene>
+        <!--fruitDetail-->
+        <scene sceneID="wjF-xP-Elf">
+            <objects>
+                <viewController storyboardIdentifier="fruitDetail" title="fruitDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7e6-TW-wVa" customClass="FruitDetailViewController" customModule="Season" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jBO-Td-UCw"/>
+                        <viewControllerLayoutGuide type="bottom" id="sOH-tA-oeh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r22-eV-blr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="7bS-Sl-usV">
+                                <rect key="frame" x="75" y="316" width="225" height="35"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="nzK-GZ-ey5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jSP-vp-tGx">
+                                <rect key="frame" x="67" y="72" width="240" height="240"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jSP-vp-tGx" firstAttribute="leading" secondItem="r22-eV-blr" secondAttribute="leadingMargin" constant="51" id="0Zk-Vu-RlX"/>
+                            <constraint firstItem="7bS-Sl-usV" firstAttribute="centerY" secondItem="r22-eV-blr" secondAttribute="centerY" id="Anq-oH-hHG"/>
+                            <constraint firstItem="jSP-vp-tGx" firstAttribute="centerY" secondItem="r22-eV-blr" secondAttribute="centerY" constant="-141.5" id="FGz-sV-grS"/>
+                            <constraint firstItem="jSP-vp-tGx" firstAttribute="centerX" secondItem="r22-eV-blr" secondAttribute="centerX" id="HPF-Pp-KJv"/>
+                            <constraint firstItem="7bS-Sl-usV" firstAttribute="centerX" secondItem="r22-eV-blr" secondAttribute="centerX" id="LkA-VC-N1j"/>
+                            <constraint firstItem="jSP-vp-tGx" firstAttribute="top" secondItem="jBO-Td-UCw" secondAttribute="bottom" constant="8" symbolic="YES" id="dAc-s7-bQw"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Detail" id="dpG-UW-mZq"/>
+                    <connections>
+                        <outlet property="detailDescriptionLabel" destination="7bS-Sl-usV" id="UOe-eY-bnt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pXl-FS-3Pe" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="1663.7181409295354"/>
+        </scene>
+        <!--fruitsSplitView-->
+        <scene sceneID="bWj-8s-StN">
+            <objects>
+                <splitViewController storyboardIdentifier="fruitsSplitView" title="fruitsSplitView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fFg-Y6-2h2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Fruits" image="Acc" id="ycp-K9-Hap"/>
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <segue destination="f92-Of-Kco" kind="relationship" relationship="masterViewController" id="Z65-fh-b0q"/>
+                        <segue destination="97f-Re-r57" kind="relationship" relationship="detailViewController" id="EiG-4k-QP8"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUu-7W-irC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-857" y="1206"/>
+        </scene>
+        <!--Welcome-->
+        <scene sceneID="XeQ-3E-yXb">
+            <objects>
+                <navigationController storyboardIdentifier="welcomeNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3xa-XS-VAV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Welcome" image="Acc" id="8Ic-kR-6l5"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="782-rF-Tsu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Dcq-ys-Kwp" kind="relationship" relationship="rootViewController" id="03Z-MM-k4E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5f6-qU-RwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2039" y="1664"/>
+        </scene>
+        <!--Welcome-->
+        <scene sceneID="iP2-HP-2CC">
+            <objects>
+                <viewController storyboardIdentifier="welcome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Dcq-ys-Kwp" customClass="WelcomeViewController" customModule="Season" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ynw-yQ-BE1"/>
+                        <viewControllerLayoutGuide type="bottom" id="dZO-l0-uvY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sca-YX-vg1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmI-oo-fbe">
+                                <rect key="frame" x="44" y="323" width="286" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rmI-oo-fbe" firstAttribute="leading" secondItem="Sca-YX-vg1" secondAttribute="leadingMargin" constant="28" id="H0m-QA-Lh7"/>
+                            <constraint firstItem="rmI-oo-fbe" firstAttribute="centerY" secondItem="Sca-YX-vg1" secondAttribute="centerY" id="Mn8-Ot-JeQ"/>
+                            <constraint firstItem="rmI-oo-fbe" firstAttribute="centerX" secondItem="Sca-YX-vg1" secondAttribute="centerX" id="SsF-FB-PnO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Welcome" id="HlU-wB-XLd"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="rmI-oo-fbe" id="V12-qf-d5z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G1w-j0-vZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2039" y="2380"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Aya-2y-pRX">
+            <objects>
+                <navigationController storyboardIdentifier="fruitDetailNC" id="97f-Re-r57" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Nu5-h8-BbF">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7e6-TW-wVa" kind="relationship" relationship="rootViewController" id="2Sa-rh-25s"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aw2-Wc-r3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-46" y="1665"/>
+        </scene>
+        <!--fruisList-->
+        <scene sceneID="24l-Pq-AFu">
+            <objects>
+                <viewController storyboardIdentifier="fruitsList" title="fruisList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uah-Ag-hla" customClass="FruitsViewController" customModule="Season" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eoH-d9-wzR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tl7-kl-b4i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FSv-Ya-WWP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="909-kg-g69">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="48" id="nqc-vM-BpM">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nqc-vM-BpM" id="4dk-qr-0fZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <segue destination="97f-Re-r57" kind="showDetail" identifier="showFruitDetail" id="wIo-xi-tSR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="909-kg-g69" firstAttribute="bottom" secondItem="Tl7-kl-b4i" secondAttribute="top" constant="49" id="3pk-KK-dip"/>
+                            <constraint firstItem="909-kg-g69" firstAttribute="centerY" secondItem="FSv-Ya-WWP" secondAttribute="centerY" id="LIW-ZQ-ye8"/>
+                            <constraint firstItem="909-kg-g69" firstAttribute="leading" secondItem="FSv-Ya-WWP" secondAttribute="leading" id="RyP-ko-zpo"/>
+                            <constraint firstItem="909-kg-g69" firstAttribute="centerX" secondItem="FSv-Ya-WWP" secondAttribute="centerX" id="dxs-9y-kNI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Fruits" id="Eef-uW-8JU"/>
+                    <connections>
+                        <outlet property="tableView" destination="909-kg-g69" id="yCQ-7V-qoL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KVk-0R-6wd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="706.39999999999998" y="904.49775112443785"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Acc" width="30" height="30"/>
+        <image name="Artichoke" width="30" height="30"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="EiG-4k-QP8"/>
+        <segue reference="62o-i1-zbl"/>
+    </inferredMetricsTieBreakers>
+</document>
