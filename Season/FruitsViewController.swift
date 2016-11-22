@@ -178,15 +178,15 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
         var unsortedTropicalFruitsOnlyList: [Fruits] = []
         
         
-        //14 doubles.... 
+        //14 doubles....
         
         // -------------- Pome fruits --------------
-        unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Apple",        startSeason: 1, endSeason: 11)!)
+        unsortedPomeFruitsOnlyList.append(Fruits.init(name: "\u{1F34E}" + "Apple",        startSeason: 1, endSeason: 11)!)
         unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Chokeberry",          startSeason: 11, endSeason: 12)!)
         unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Hawthorn",        startSeason: 1, endSeason: 11)!)
         unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Loquat",         startSeason: 1, endSeason: 4)!)  /////
         unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Medlar",         startSeason: 1, endSeason: 4)!) /////
-        unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Pear",     startSeason: 1, endSeason: 4)!)
+        unsortedPomeFruitsOnlyList.append(Fruits.init(name: "\u{1F34F}" + "Pear",     startSeason: 1, endSeason: 4)!)
         unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Quince",         startSeason: 1, endSeason: 4)!)
         unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Rose hip", startSeason: 1, endSeason: 4)!)
         unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Rowan",          startSeason: 1, endSeason: 4)!)
@@ -196,10 +196,10 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
         
         // -------------- Stone fruits --------------
         unsortedStoneFruitsOnlyList.append(Fruits.init(name: "Apricot",     startSeason: 1, endSeason: 12)!)
-        unsortedStoneFruitsOnlyList.append(Fruits.init(name: "Cherry",         startSeason: 1, endSeason: 12)!)
+        unsortedStoneFruitsOnlyList.append(Fruits.init(name: "\u{1F352}" + "Cherry",         startSeason: 1, endSeason: 12)!)
         unsortedStoneFruitsOnlyList.append(Fruits.init(name: "Chokecherry",        startSeason: 1, endSeason: 4)!)
         unsortedStoneFruitsOnlyList.append(Fruits.init(name: "Greengage",         startSeason: 1, endSeason: 4)!)
-        unsortedStoneFruitsOnlyList.append(Fruits.init(name: "Peach",     startSeason: 1, endSeason: 4)!)
+        unsortedStoneFruitsOnlyList.append(Fruits.init(name: "\u{1F351}" + "Peach",     startSeason: 1, endSeason: 4)!)
         unsortedStoneFruitsOnlyList.append(Fruits.init(name: "Plum",       startSeason: 1, endSeason: 4)!)
         
         // -------------- Other temperate fruits --------------
@@ -244,12 +244,12 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
         unsortedBerriesOnlyList.append(Fruits.init(name: "Nannyberry",  startSeason: 1, endSeason: 4)!)
         unsortedBerriesOnlyList.append(Fruits.init(name: "Oregon grape",              startSeason: 1, endSeason: 12)!)
         unsortedBerriesOnlyList.append(Fruits.init(name: "Sea buckthorn",              startSeason: 1, endSeason: 4)!)
-        unsortedBerriesOnlyList.append(Fruits.init(name: "Strawberry",  startSeason: 1, endSeason: 4)!)
+        unsortedBerriesOnlyList.append(Fruits.init(name: "\u{1F353}" + "Strawberry",  startSeason: 1, endSeason: 4)!)
         unsortedBerriesOnlyList.append(Fruits.init(name: "Ugni",               startSeason: 1, endSeason: 4)!) /////
         unsortedBerriesOnlyList.append(Fruits.init(name: "Wolfberry",             startSeason: 1, endSeason: 4)!)
         
         // -------------- Mediterranean natives --------------
-        unsortedMediterraneanNativesOnlyList.append(Fruits.init(name: "Grapes",         startSeason: 1, endSeason: 12)!)
+        unsortedMediterraneanNativesOnlyList.append(Fruits.init(name: "\u{1F347}" + "Grapes",         startSeason: 1, endSeason: 12)!)
         unsortedMediterraneanNativesOnlyList.append(Fruits.init(name: "Olives",        startSeason: 1, endSeason: 4)!)
         unsortedMediterraneanNativesOnlyList.append(Fruits.init(name: "Black mulberry",            startSeason: 1, endSeason: 4)!) /////
         unsortedMediterraneanNativesOnlyList.append(Fruits.init(name: "Cornelian cherry",            startSeason: 1, endSeason: 4)!)
@@ -260,7 +260,7 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
         unsortedMediterraneanNativesOnlyList.append(Fruits.init(name: "Sycamore fig",      startSeason: 1, endSeason: 4)!)
         
         // -------------- Citrus --------------
-        unsortedCitrusOnlyList.append(Fruits.init(name: "Lemon",         startSeason: 1, endSeason: 12)!)
+        unsortedCitrusOnlyList.append(Fruits.init(name: "\u{1F34B}" + "Lemon",         startSeason: 1, endSeason: 12)!)
         unsortedCitrusOnlyList.append(Fruits.init(name: "Blood orange",       startSeason: 1, endSeason: 4)!)
         unsortedCitrusOnlyList.append(Fruits.init(name: "Clementine",     startSeason: 1, endSeason: 4)!)
         unsortedCitrusOnlyList.append(Fruits.init(name: "Grapefruit",       startSeason: 1, endSeason: 4)!) /////
@@ -268,8 +268,8 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
         unsortedCitrusOnlyList.append(Fruits.init(name: "Lime",      startSeason: 1, endSeason: 4)!) /////
         unsortedCitrusOnlyList.append(Fruits.init(name: "Mandarin",     startSeason: 1, endSeason: 4)!)
         unsortedCitrusOnlyList.append(Fruits.init(name: "Naartjie",       startSeason: 1, endSeason: 4)!)
-        unsortedCitrusOnlyList.append(Fruits.init(name: "Orange",         startSeason: 1, endSeason: 12)!) /////
-        unsortedCitrusOnlyList.append(Fruits.init(name: "Pomelo",       startSeason: 1, endSeason: 4)!)
+        unsortedCitrusOnlyList.append(Fruits.init(name: "\u{1F34A}" + "Orange",         startSeason: 1, endSeason: 12)!) /////
+        unsortedCitrusOnlyList.append(Fruits.init(name: "\u{1F348}" + "Pomelo",       startSeason: 1, endSeason: 4)!)
         unsortedCitrusOnlyList.append(Fruits.init(name: "Sweet lemon",     startSeason: 1, endSeason: 4)!)
         unsortedCitrusOnlyList.append(Fruits.init(name: "Kabosu",       startSeason: 1, endSeason: 4)!)
         unsortedCitrusOnlyList.append(Fruits.init(name: "Oroblanco",       startSeason: 1, endSeason: 4)!)
