@@ -53,7 +53,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HR6-ri-P3a" id="0zp-Qh-W2I">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="ol">
@@ -147,7 +147,7 @@
         <scene sceneID="Nki-YV-4Qg">
             <objects>
                 <splitViewController storyboardIdentifier="vegetablesSplitView" title="vegetablesSplitView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H1p-Uh-vWS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Vegetables" image="Acc" id="cVd-3C-EL4"/>
+                    <tabBarItem key="tabBarItem" title="Vegetables" image="veg_item" id="cVd-3C-EL4"/>
                     <toolbarItems/>
                     <connections>
                         <segue destination="RMx-3f-FxP" kind="relationship" relationship="masterViewController" id="BlO-5A-QYV"/>
@@ -247,7 +247,7 @@
         <scene sceneID="bWj-8s-StN">
             <objects>
                 <splitViewController storyboardIdentifier="fruitsSplitView" title="fruitsSplitView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fFg-Y6-2h2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Fruits" image="Fruits" id="ycp-K9-Hap"/>
+                    <tabBarItem key="tabBarItem" title="Fruits" image="fruit_item" id="ycp-K9-Hap"/>
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
@@ -349,7 +349,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nqc-vM-BpM" id="4dk-qr-0fZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -381,10 +381,11 @@
     <resources>
         <image name="Acc" width="30" height="30"/>
         <image name="Artichoke" width="30" height="30"/>
-        <image name="Fruits" width="30" height="30"/>
+        <image name="fruit_item" width="30" height="30"/>
+        <image name="veg_item" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="EiG-4k-QP8"/>
-        <segue reference="62o-i1-zbl"/>
+        <segue reference="Tll-UG-LXB"/>
     </inferredMetricsTieBreakers>
 </document>
