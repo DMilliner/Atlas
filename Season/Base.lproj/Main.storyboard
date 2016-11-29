@@ -17,7 +17,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -162,7 +162,7 @@
         <scene sceneID="r7l-gg-dq7">
             <objects>
                 <navigationController storyboardIdentifier="vegetableDetailNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vC3-pB-5Vb" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="DjV-YW-jjY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -180,7 +180,7 @@
                 <navigationController storyboardIdentifier="fruitsListNC" title="VegetablesNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f92-Of-Kco" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Vegies" image="Artichoke" id="pvK-Kf-xuW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Jw0-vl-A8P">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Jw0-vl-A8P">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -208,42 +208,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="7bS-Sl-usV">
-                                <rect key="frame" x="221" y="170" width="225" height="35"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UA7-aZ-mS2">
+                                <rect key="frame" x="243.5" y="64" width="180" height="180"/>
+                                <color key="backgroundColor" red="0.29019607843137252" green="0.6705882352941176" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="nzK-GZ-ey5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jSP-vp-tGx">
-                                <rect key="frame" x="71" y="72" width="240" height="240"/>
-                                <color key="backgroundColor" red="0.36284722222222221" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="W8z-ua-p2d"/>
-                                    <constraint firstAttribute="height" constant="240" id="h1c-dU-gYb"/>
+                                    <constraint firstAttribute="height" constant="180" id="DWo-jW-bi2"/>
+                                    <constraint firstAttribute="width" constant="180" id="OGg-oU-7jo"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1y-Ro-QPe" userLabel="TextContainer">
+                                <rect key="frame" x="0.0" y="264" width="667" height="62"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRy-TU-HTB">
+                                        <rect key="frame" x="312" y="21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2156862745" green="0.50196078430000002" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="rRy-TU-HTB" firstAttribute="centerY" secondItem="S1y-Ro-QPe" secondAttribute="centerY" id="BgF-Ug-Z4j"/>
+                                    <constraint firstItem="rRy-TU-HTB" firstAttribute="centerX" secondItem="S1y-Ro-QPe" secondAttribute="centerX" id="e6U-ue-dnT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jSP-vp-tGx" firstAttribute="leading" secondItem="r22-eV-blr" secondAttribute="leadingMargin" constant="51" id="0Zk-Vu-RlX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jSP-vp-tGx" secondAttribute="trailing" constant="52" id="5fp-V9-zlG"/>
-                            <constraint firstItem="7bS-Sl-usV" firstAttribute="centerY" secondItem="r22-eV-blr" secondAttribute="centerY" id="Anq-oH-hHG"/>
-                            <constraint firstItem="jSP-vp-tGx" firstAttribute="top" secondItem="jBO-Td-UCw" secondAttribute="bottom" constant="8" id="Dca-1y-lHt"/>
-                            <constraint firstItem="jSP-vp-tGx" firstAttribute="centerY" secondItem="r22-eV-blr" secondAttribute="centerY" constant="-141.5" id="FGz-sV-grS"/>
-                            <constraint firstItem="jSP-vp-tGx" firstAttribute="centerX" secondItem="r22-eV-blr" secondAttribute="centerX" id="HPF-Pp-KJv"/>
-                            <constraint firstItem="7bS-Sl-usV" firstAttribute="centerX" secondItem="r22-eV-blr" secondAttribute="centerX" id="LkA-VC-N1j"/>
-                            <constraint firstItem="jSP-vp-tGx" firstAttribute="top" secondItem="jBO-Td-UCw" secondAttribute="bottom" constant="8" symbolic="YES" id="dAc-s7-bQw"/>
+                            <constraint firstItem="S1y-Ro-QPe" firstAttribute="top" secondItem="UA7-aZ-mS2" secondAttribute="bottom" constant="20" id="5UH-lo-ga8"/>
+                            <constraint firstItem="UA7-aZ-mS2" firstAttribute="top" secondItem="jBO-Td-UCw" secondAttribute="bottom" id="IJF-B5-FT1"/>
+                            <constraint firstItem="S1y-Ro-QPe" firstAttribute="leading" secondItem="r22-eV-blr" secondAttribute="leading" id="LxK-uh-MPo"/>
+                            <constraint firstItem="UA7-aZ-mS2" firstAttribute="centerX" secondItem="r22-eV-blr" secondAttribute="centerX" id="lTd-Nv-P0U"/>
+                            <constraint firstItem="S1y-Ro-QPe" firstAttribute="bottom" secondItem="sOH-tA-oeh" secondAttribute="top" id="qkC-hf-Rv6"/>
+                            <constraint firstItem="S1y-Ro-QPe" firstAttribute="trailing" secondItem="r22-eV-blr" secondAttribute="trailing" id="zie-XU-Qa4"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="dpG-UW-mZq"/>
                     <connections>
-                        <outlet property="fruitImage" destination="jSP-vp-tGx" id="bU7-OW-Lv5"/>
-                        <outlet property="fruitNameLabel" destination="7bS-Sl-usV" id="hQg-cS-c9Q"/>
+                        <outlet property="fruitImage" destination="UA7-aZ-mS2" id="Gm3-l6-a8K"/>
+                        <outlet property="fruitNameLabel" destination="rRy-TU-HTB" id="oG0-ZW-sH3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXl-FS-3Pe" sceneMemberID="firstResponder"/>
@@ -273,7 +277,7 @@
                 <navigationController storyboardIdentifier="welcomeNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3xa-XS-VAV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="home" id="8Ic-kR-6l5"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="782-rF-Tsu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="782-rF-Tsu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -324,7 +328,7 @@
         <scene sceneID="Aya-2y-pRX">
             <objects>
                 <navigationController storyboardIdentifier="fruitDetailNC" id="97f-Re-r57" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Nu5-h8-BbF">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Nu5-h8-BbF">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
