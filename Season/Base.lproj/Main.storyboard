@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KqX-cX-Max">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -53,7 +53,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HR6-ri-P3a" id="0zp-Qh-W2I">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="ol">
@@ -94,11 +94,11 @@
                         <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="vegetableDetail" id="svH-Pt-448">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="75" y="316" width="225" height="35"/>
+                                <rect key="frame" x="221" y="170" width="225" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Idh-Lo-jd4"/>
@@ -147,7 +147,7 @@
         <scene sceneID="Nki-YV-4Qg">
             <objects>
                 <splitViewController storyboardIdentifier="vegetablesSplitView" title="vegetablesSplitView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H1p-Uh-vWS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Vegetables" image="veg_item" id="cVd-3C-EL4"/>
+                    <tabBarItem key="tabBarItem" title="Vegetables" image="veg_8" id="cVd-3C-EL4"/>
                     <toolbarItems/>
                     <connections>
                         <segue destination="RMx-3f-FxP" kind="relationship" relationship="masterViewController" id="BlO-5A-QYV"/>
@@ -205,11 +205,11 @@
                         <viewControllerLayoutGuide type="bottom" id="sOH-tA-oeh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="r22-eV-blr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="7bS-Sl-usV">
-                                <rect key="frame" x="75" y="316" width="225" height="35"/>
+                                <rect key="frame" x="221" y="170" width="225" height="35"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="nzK-GZ-ey5"/>
@@ -219,13 +219,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jSP-vp-tGx">
-                                <rect key="frame" x="67" y="72" width="240" height="240"/>
+                                <rect key="frame" x="71" y="72" width="240" height="240"/>
+                                <color key="backgroundColor" red="0.36284722222222221" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="W8z-ua-p2d"/>
+                                    <constraint firstAttribute="height" constant="240" id="h1c-dU-gYb"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jSP-vp-tGx" firstAttribute="leading" secondItem="r22-eV-blr" secondAttribute="leadingMargin" constant="51" id="0Zk-Vu-RlX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jSP-vp-tGx" secondAttribute="trailing" constant="52" id="5fp-V9-zlG"/>
                             <constraint firstItem="7bS-Sl-usV" firstAttribute="centerY" secondItem="r22-eV-blr" secondAttribute="centerY" id="Anq-oH-hHG"/>
+                            <constraint firstItem="jSP-vp-tGx" firstAttribute="top" secondItem="jBO-Td-UCw" secondAttribute="bottom" constant="8" id="Dca-1y-lHt"/>
                             <constraint firstItem="jSP-vp-tGx" firstAttribute="centerY" secondItem="r22-eV-blr" secondAttribute="centerY" constant="-141.5" id="FGz-sV-grS"/>
                             <constraint firstItem="jSP-vp-tGx" firstAttribute="centerX" secondItem="r22-eV-blr" secondAttribute="centerX" id="HPF-Pp-KJv"/>
                             <constraint firstItem="7bS-Sl-usV" firstAttribute="centerX" secondItem="r22-eV-blr" secondAttribute="centerX" id="LkA-VC-N1j"/>
@@ -247,7 +254,7 @@
         <scene sceneID="bWj-8s-StN">
             <objects>
                 <splitViewController storyboardIdentifier="fruitsSplitView" title="fruitsSplitView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fFg-Y6-2h2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Fruits" image="fruit_item" id="ycp-K9-Hap"/>
+                    <tabBarItem key="tabBarItem" title="Fruits" image="fruit_8" id="ycp-K9-Hap"/>
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
@@ -260,11 +267,11 @@
             </objects>
             <point key="canvasLocation" x="-857" y="1206"/>
         </scene>
-        <!--Welcome-->
+        <!--Navigation Controller-->
         <scene sceneID="XeQ-3E-yXb">
             <objects>
                 <navigationController storyboardIdentifier="welcomeNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3xa-XS-VAV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Welcome" image="Acc" id="8Ic-kR-6l5"/>
+                    <tabBarItem key="tabBarItem" title="" image="home" id="8Ic-kR-6l5"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="782-rF-Tsu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -287,11 +294,11 @@
                         <viewControllerLayoutGuide type="bottom" id="dZO-l0-uvY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Sca-YX-vg1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmI-oo-fbe">
-                                <rect key="frame" x="44" y="323" width="286" height="21"/>
+                                <rect key="frame" x="20" y="-74" width="627" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -299,8 +306,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rmI-oo-fbe" firstAttribute="leading" secondItem="Sca-YX-vg1" secondAttribute="leadingMargin" constant="28" id="H0m-QA-Lh7"/>
-                            <constraint firstItem="rmI-oo-fbe" firstAttribute="centerY" secondItem="Sca-YX-vg1" secondAttribute="centerY" id="Mn8-Ot-JeQ"/>
+                            <constraint firstItem="rmI-oo-fbe" firstAttribute="leading" secondItem="Sca-YX-vg1" secondAttribute="leadingMargin" id="H0m-QA-Lh7"/>
+                            <constraint firstItem="rmI-oo-fbe" firstAttribute="centerY" secondItem="Sca-YX-vg1" secondAttribute="centerY" constant="-251" id="Mn8-Ot-JeQ"/>
                             <constraint firstItem="rmI-oo-fbe" firstAttribute="centerX" secondItem="Sca-YX-vg1" secondAttribute="centerX" id="SsF-FB-PnO"/>
                         </constraints>
                     </view>
@@ -311,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1w-j0-vZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2039" y="2380"/>
+            <point key="canvasLocation" x="-2039.2" y="2379.7601199400301"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aya-2y-pRX">
@@ -338,18 +345,18 @@
                         <viewControllerLayoutGuide type="bottom" id="Tl7-kl-b4i"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FSv-Ya-WWP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="909-kg-g69">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="48" id="nqc-vM-BpM">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="28" width="667" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nqc-vM-BpM" id="4dk-qr-0fZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="667" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -379,10 +386,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Acc" width="30" height="30"/>
         <image name="Artichoke" width="30" height="30"/>
-        <image name="fruit_item" width="30" height="30"/>
-        <image name="veg_item" width="30" height="30"/>
+        <image name="fruit_8" width="30" height="30"/>
+        <image name="home" width="30" height="30"/>
+        <image name="veg_8" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="EiG-4k-QP8"/>

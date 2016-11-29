@@ -75,10 +75,10 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             var country: String = ""
             var worldRegion: String = "World"
 
-            placeMark = placemarks?[0]
+            
             
             if(self.isInternetAvailable()){
-
+                placeMark = placemarks?[0]
                 print("dictionary = \(placeMark.addressDictionary)")
                 //let region = (placeMark.timeZone?.identifier)! as String
                 

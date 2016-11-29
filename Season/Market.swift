@@ -29,22 +29,18 @@ class Market {
 
         switch location {
         case "Europe":
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "\u{1F34E}" + "Apple",        startSeason: 1, endSeason: 11)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Chokeberry",          startSeason: 11, endSeason: 12)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Hawthorn",        startSeason: 1, endSeason: 11)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Loquat",         startSeason: 1, endSeason: 4)!)  /////
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Medlar",         startSeason: 1, endSeason: 4)!) /////
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "\u{1F34F}" + "Pear",     startSeason: 1, endSeason: 4)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Quince",         startSeason: 1, endSeason: 4)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Rose hip", startSeason: 1, endSeason: 4)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Rowan",          startSeason: 1, endSeason: 4)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Service tree",        startSeason: 1, endSeason: 4)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Serviceberry",          startSeason: 1, endSeason: 4)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Shipova",      startSeason: 1, endSeason: 4)!)
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "\u{1F34E}" + "Apple",        startSeason: 10, endSeason: 3)!)
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Loquat",         startSeason: 5, endSeason: 6)!)  /////
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Medlar",         startSeason: 10, endSeason: 12)!) /////
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "\u{1F34F}" + "Pear",     startSeason: 8, endSeason: 1)!)
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Quince",         startSeason: 9, endSeason: 10)!)
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Rose hip", startSeason: 9, endSeason: 10)!)
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Service tree",        startSeason: 9, endSeason: 10)!)
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Serviceberry",          startSeason: 7, endSeason: 9)!)
+        
         case "North America":
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "\u{1F34E}" + "Apple",        startSeason: 1, endSeason: 11)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Chokeberry",          startSeason: 11, endSeason: 12)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Hawthorn",        startSeason: 1, endSeason: 11)!)
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "\u{1F34E}" + "Apple",        startSeason: 8, endSeason: 11)!)
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Chokeberry",          startSeason: 11, endSeason: 12)!)// ---
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Loquat",         startSeason: 1, endSeason: 4)!)  /////
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Medlar",         startSeason: 1, endSeason: 4)!) /////
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "\u{1F34F}" + "Pear",     startSeason: 1, endSeason: 4)!)
@@ -53,7 +49,7 @@ class Market {
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Rowan",          startSeason: 1, endSeason: 4)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Service tree",        startSeason: 1, endSeason: 4)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Serviceberry",          startSeason: 1, endSeason: 4)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Shipova",      startSeason: 1, endSeason: 4)!)
+        
         case "South America":
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "\u{1F34E}" + "Apple",        startSeason: 1, endSeason: 11)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Chokeberry",          startSeason: 11, endSeason: 12)!)
@@ -66,7 +62,7 @@ class Market {
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Rowan",          startSeason: 1, endSeason: 4)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Service tree",        startSeason: 1, endSeason: 4)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Serviceberry",          startSeason: 1, endSeason: 4)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Shipova",      startSeason: 1, endSeason: 4)!)
+        
         case "Asia":
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "\u{1F34E}" + "Apple",        startSeason: 1, endSeason: 11)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Chokeberry",          startSeason: 11, endSeason: 12)!)
@@ -79,7 +75,7 @@ class Market {
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Rowan",          startSeason: 1, endSeason: 4)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Service tree",        startSeason: 1, endSeason: 4)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Serviceberry",          startSeason: 1, endSeason: 4)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Shipova",      startSeason: 1, endSeason: 4)!)
+        
         case "Africa":
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "\u{1F34E}" + "Apple",        startSeason: 1, endSeason: 11)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Chokeberry",          startSeason: 11, endSeason: 12)!)
@@ -92,7 +88,7 @@ class Market {
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Rowan",          startSeason: 1, endSeason: 4)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Service tree",        startSeason: 1, endSeason: 4)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Serviceberry",          startSeason: 1, endSeason: 4)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Shipova",      startSeason: 1, endSeason: 4)!)
+        
         case "Oceania":
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "\u{1F34E}" + "Apple",        startSeason: 1, endSeason: 11)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Chokeberry",          startSeason: 11, endSeason: 12)!)
@@ -105,8 +101,8 @@ class Market {
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Rowan",          startSeason: 1, endSeason: 4)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Service tree",        startSeason: 1, endSeason: 4)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Serviceberry",          startSeason: 1, endSeason: 4)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Shipova",      startSeason: 1, endSeason: 4)!)
-        default:
+            
+        case "World":
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "\u{1F34E}" + "Apple",        startSeason: 1, endSeason: 11)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Chokeberry",          startSeason: 11, endSeason: 12)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Hawthorn",        startSeason: 1, endSeason: 11)!)
@@ -118,8 +114,11 @@ class Market {
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Rowan",          startSeason: 1, endSeason: 4)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Service tree",        startSeason: 1, endSeason: 4)!)
             unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Serviceberry",          startSeason: 1, endSeason: 4)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name: "Shipova",      startSeason: 1, endSeason: 4)!)
+        
+        default:
+            unsortedPomeFruitsOnlyList.removeAll()
         }
+        
         return unsortedPomeFruitsOnlyList
     }
     func getStoneFruitsCompleteListbyLocation(location : String) -> [Fruits]{
