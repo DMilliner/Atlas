@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Artichoke_30.png",
+      "filename" : "ic_home_30pt.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Artichoke_60.png",
+      "filename" : "ic_home_30pt_2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Artichoke_90.png",
+      "filename" : "ic_home_30pt_3x.png",
       "scale" : "3x"
     }
   ],

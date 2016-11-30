@@ -21,6 +21,7 @@
 		0C4871631DDB1BD900A065E0 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4871621DDB1BD900A065E0 /* CustomTabBarController.swift */; };
 		0C4871651DDB5ADD00A065E0 /* Vegetables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4871641DDB5ADC00A065E0 /* Vegetables.swift */; };
 		0C4871671DDC884700A065E0 /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4871661DDC884700A065E0 /* Fruits.swift */; };
+		0C56A1481DE4AD45006ACFFE /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C56A1471DE4AD45006ACFFE /* Market.swift */; };
 		0CA538221DDF8FB2009BA996 /* VegetableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA538211DDF8FB2009BA996 /* VegetableViewCell.swift */; };
 		0CA538281DDFAB58009BA996 /* FruitViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA538271DDFAB58009BA996 /* FruitViewCell.swift */; };
 		0CD83FFF1DDF192C0087E5C1 /* SF-UI-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0CD83FF61DDF192C0087E5C1 /* SF-UI-Display-Black.otf */; };
@@ -72,8 +73,10 @@
 		0C4871621DDB1BD900A065E0 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		0C4871641DDB5ADC00A065E0 /* Vegetables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vegetables.swift; sourceTree = "<group>"; };
 		0C4871661DDC884700A065E0 /* Fruits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
+		0C56A1471DE4AD45006ACFFE /* Market.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
 		0CA538211DDF8FB2009BA996 /* VegetableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegetableViewCell.swift; sourceTree = "<group>"; };
 		0CA538271DDFAB58009BA996 /* FruitViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FruitViewCell.swift; sourceTree = "<group>"; };
+		0CD6B0091DE5BCF000F9CBBD /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		0CD83FF61DDF192C0087E5C1 /* SF-UI-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Black.otf"; path = "../../../Downloads/SF UI/SF-UI-Display/SF-UI-Display-Black.otf"; sourceTree = "<group>"; };
 		0CD83FF71DDF192C0087E5C1 /* SF-UI-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Bold.otf"; path = "../../../Downloads/SF UI/SF-UI-Display/SF-UI-Display-Bold.otf"; sourceTree = "<group>"; };
 		0CD83FF81DDF192C0087E5C1 /* SF-UI-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Heavy.otf"; path = "../../../Downloads/SF UI/SF-UI-Display/SF-UI-Display-Heavy.otf"; sourceTree = "<group>"; };
@@ -141,6 +144,7 @@
 				0C4871661DDC884700A065E0 /* Fruits.swift */,
 				0C4871301DDAFD3700A065E0 /* FruitsViewController.swift */,
 				0C4871321DDAFD3700A065E0 /* FruitDetailViewController.swift */,
+				0C56A1471DE4AD45006ACFFE /* Market.swift */,
 				0C4871641DDB5ADC00A065E0 /* Vegetables.swift */,
 				0C48715E1DDB0CC900A065E0 /* VegetablesViewController.swift */,
 				0C4871601DDB0D5300A065E0 /* VegetableDetailViewController.swift */,
@@ -183,6 +187,7 @@
 				0CD83FFC1DDF192C0087E5C1 /* SF-UI-Display-Semibold.otf */,
 				0CD83FFD1DDF192C0087E5C1 /* SF-UI-Display-Thin.otf */,
 				0CD83FFE1DDF192C0087E5C1 /* SF-UI-Display-Ultralight.otf */,
+				0CD6B0091DE5BCF000F9CBBD /* Location.gpx */,
 			);
 			name = Ressources;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 				0C48715F1DDB0CC900A065E0 /* VegetablesViewController.swift in Sources */,
 				0CA538221DDF8FB2009BA996 /* VegetableViewCell.swift in Sources */,
 				0C48712F1DDAFD3700A065E0 /* AppDelegate.swift in Sources */,
+				0C56A1481DE4AD45006ACFFE /* Market.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -482,7 +488,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
