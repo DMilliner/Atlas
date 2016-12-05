@@ -253,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXl-FS-3Pe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708" y="1751"/>
+            <point key="canvasLocation" x="708" y="1738"/>
         </scene>
         <!--fruitsSplitView-->
         <scene sceneID="bWj-8s-StN">
@@ -402,7 +402,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZU-xk-W4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1258" y="2417"/>
+            <point key="canvasLocation" x="-1257" y="2496"/>
         </scene>
         <!--Locations-->
         <scene sceneID="GyZ-if-elP">
@@ -434,14 +434,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sr-Qy-Qo9">
-                                <rect key="frame" x="24" y="288" width="327" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FHo-la-WNc">
-                                <rect key="frame" x="10" y="319" width="355" height="183"/>
+                                <rect key="frame" x="10" y="290" width="355" height="183"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FHo-la-WNc" secondAttribute="height" multiplier="355:183" id="HL0-fK-7Kc"/>
                                 </constraints>
@@ -449,9 +443,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="9sr-Qy-Qo9" secondAttribute="trailing" constant="8" id="0dx-OZ-CbC"/>
                             <constraint firstItem="bQK-cB-zx1" firstAttribute="leading" secondItem="tU1-Rq-GPH" secondAttribute="leadingMargin" constant="8" id="0js-l4-Xns"/>
                             <constraint firstAttribute="trailing" secondItem="FHo-la-WNc" secondAttribute="trailing" constant="10" id="10e-bO-YiM"/>
+                            <constraint firstItem="FHo-la-WNc" firstAttribute="top" secondItem="mnS-67-VjP" secondAttribute="bottom" constant="10" id="7vY-2c-qTR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WJx-oJ-RK4" secondAttribute="trailing" constant="8" id="Cqy-CP-QQC"/>
                             <constraint firstItem="FHo-la-WNc" firstAttribute="leading" secondItem="tU1-Rq-GPH" secondAttribute="leading" constant="10" id="HWX-UC-Rx6"/>
                             <constraint firstItem="WJx-oJ-RK4" firstAttribute="top" secondItem="og5-1X-Ypv" secondAttribute="bottom" constant="8" id="KHK-Lv-evu"/>
@@ -459,14 +453,10 @@
                             <constraint firstItem="mnS-67-VjP" firstAttribute="leading" secondItem="tU1-Rq-GPH" secondAttribute="leadingMargin" constant="8" id="NG1-FX-zAj"/>
                             <constraint firstItem="FHo-la-WNc" firstAttribute="centerX" secondItem="tU1-Rq-GPH" secondAttribute="centerX" id="NXj-dE-5VB"/>
                             <constraint firstItem="WJx-oJ-RK4" firstAttribute="leading" secondItem="tU1-Rq-GPH" secondAttribute="leadingMargin" constant="8" id="O7W-Up-Wl0"/>
-                            <constraint firstItem="9sr-Qy-Qo9" firstAttribute="centerX" secondItem="tU1-Rq-GPH" secondAttribute="centerX" id="QDR-gZ-4kU"/>
-                            <constraint firstItem="9sr-Qy-Qo9" firstAttribute="top" secondItem="mnS-67-VjP" secondAttribute="bottom" constant="8" id="XfW-3A-Mjl"/>
                             <constraint firstItem="mnS-67-VjP" firstAttribute="centerX" secondItem="tU1-Rq-GPH" secondAttribute="centerX" id="dzZ-2U-6fN"/>
-                            <constraint firstItem="FHo-la-WNc" firstAttribute="top" secondItem="9sr-Qy-Qo9" secondAttribute="bottom" constant="10" id="gKB-ar-pqC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bQK-cB-zx1" secondAttribute="trailing" constant="8" id="gap-Ay-h48"/>
                             <constraint firstItem="WJx-oJ-RK4" firstAttribute="centerX" secondItem="tU1-Rq-GPH" secondAttribute="centerX" id="hq8-jk-dFm"/>
                             <constraint firstItem="mnS-67-VjP" firstAttribute="top" secondItem="bQK-cB-zx1" secondAttribute="bottom" constant="8" id="lbZ-WG-t8f"/>
-                            <constraint firstItem="9sr-Qy-Qo9" firstAttribute="leading" secondItem="tU1-Rq-GPH" secondAttribute="leadingMargin" constant="8" id="ndX-RT-Lq0"/>
                             <constraint firstItem="bQK-cB-zx1" firstAttribute="top" secondItem="WJx-oJ-RK4" secondAttribute="bottom" constant="8" id="xl3-Ko-P2J"/>
                         </constraints>
                     </view>
@@ -480,14 +470,13 @@
                     <connections>
                         <outlet property="locationPicker" destination="bQK-cB-zx1" id="KFR-PZ-ksx"/>
                         <outlet property="selectLocationLabel" destination="WJx-oJ-RK4" id="A0M-S6-caV"/>
-                        <outlet property="selectedLocationDetailLabel" destination="9sr-Qy-Qo9" id="dub-mp-hDk"/>
                         <outlet property="selectedLocationImage" destination="FHo-la-WNc" id="5Yo-ta-PF7"/>
                         <outlet property="selectedLocationLabel" destination="mnS-67-VjP" id="WGF-hb-Qz6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GCD-jJ-tMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-423.19999999999999" y="2416.6416791604202"/>
+            <point key="canvasLocation" x="-441" y="2496"/>
         </scene>
         <!--fruisList-->
         <scene sceneID="24l-Pq-AFu">

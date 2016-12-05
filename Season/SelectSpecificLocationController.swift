@@ -14,7 +14,6 @@ class SelectSpecificLocationController: UIViewController, UIPickerViewDataSource
     @IBOutlet var selectLocationLabel: UILabel!
     @IBOutlet weak var locationPicker: UIPickerView!
     @IBOutlet var selectedLocationLabel: UILabel!
-    @IBOutlet var selectedLocationDetailLabel: UILabel!
     @IBOutlet var selectedLocationImage: UIImageView!
 
     var data : String = ""
@@ -31,7 +30,6 @@ class SelectSpecificLocationController: UIViewController, UIPickerViewDataSource
             self.locationPicker.selectRow(indexOfLocation, inComponent: 0, animated: true)
         }
         selectedLocationLabel.text = "Location selected is " + data
-        selectedLocationDetailLabel.text = ""
         selectedLocationImage.image = imageByLocation(data)
     }
     
@@ -60,43 +58,36 @@ class SelectSpecificLocationController: UIViewController, UIPickerViewDataSource
         UserDefaults.standard.synchronize()
         switch pickerData[row] {
         case "North America":
-            selectedLocationDetailLabel.text = ""
             selectedLocationImage.image = UIImage(named: "northAmerica")
             UserDefaults.standard.set("North America", forKey: "savedWorldRegion")
             UserDefaults.standard.synchronize()
             break
         case "South America":
-            selectedLocationDetailLabel.text = ""
             selectedLocationImage.image = UIImage(named: "southAmerica")
             UserDefaults.standard.set("South America", forKey: "savedWorldRegion")
             UserDefaults.standard.synchronize()
             break
         case "Europe":
-            selectedLocationDetailLabel.text = ""
             selectedLocationImage.image = UIImage(named: "europe")
             UserDefaults.standard.set("Europe", forKey: "savedWorldRegion")
             UserDefaults.standard.synchronize()
             break
         case "Africa":
-            selectedLocationDetailLabel.text = ""
             selectedLocationImage.image = UIImage(named: "africa")
             UserDefaults.standard.set("Africa", forKey: "savedWorldRegion")
             UserDefaults.standard.synchronize()
             break
         case "Asia":
-            selectedLocationDetailLabel.text = ""
             selectedLocationImage.image = UIImage(named: "asia")
             UserDefaults.standard.set("Asia", forKey: "savedWorldRegion")
             UserDefaults.standard.synchronize()
             break
         case "Oceania":
-            selectedLocationDetailLabel.text = ""
             selectedLocationImage.image = UIImage(named: "oceania")
             UserDefaults.standard.set("Oceania", forKey: "savedWorldRegion")
             UserDefaults.standard.synchronize()
             break
         case "World":
-            selectedLocationDetailLabel.text = ""
             selectedLocationImage.image = UIImage(named: "world")
             UserDefaults.standard.set("World", forKey: "savedWorldRegion")
             UserDefaults.standard.synchronize()

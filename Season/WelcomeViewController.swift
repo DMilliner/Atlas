@@ -43,11 +43,16 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        let worldRegion = UserDefaults.standard.string(forKey: "savedWorldRegion")!
-        self.locationLabel.text = emojiByRegion(worldRegion) + " Localized in : "
-        self.locationValueLabel.text = worldRegion
-        
+
+        if let worldRegionExists = UserDefaults.standard.string(forKey: "savedWorldRegion") {
+            self.locationLabel.text = emojiByRegion(worldRegionExists) + " Localized in : "
+            self.locationValueLabel.text = worldRegionExists
+        } else {
+            self.locationLabel.text = emojiByRegion("World") + " Localized in : "
+            self.locationValueLabel.text = "World"
+            UserDefaults.standard.set("World", forKey: "savedWorldRegion")
+            UserDefaults.standard.synchronize()
+        }
     }
     
     func selectSpecificLocation(){
@@ -186,26 +191,6 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         self.locationValueLabel.text = "World"
         UserDefaults.standard.set("World", forKey: "savedWorldRegion")
         UserDefaults.standard.synchronize()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .notDetermined:
-            locationManager.requestAlwaysAuthorization()
-            break
-        case .authorizedWhenInUse:
-            locationManager.startUpdatingLocation()
-            break
-        case .authorizedAlways:
-            locationManager.startUpdatingLocation()
-            break
-        case .restricted:
-            // restricted by e.g. parental controls. User can't enable Location Services
-            break
-        case .denied:
-            // user denied your app access to Location Services, but can grant access from Settings.app
-            break
-        }
     }
     
     func emojiByRegion(_ location :String)->String{
