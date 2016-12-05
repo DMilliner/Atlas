@@ -16,6 +16,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var locationValueLabel: UILabel!
+    @IBOutlet var locationView: UIView!
 
     var locationManager = CLLocationManager()
 
@@ -27,11 +28,29 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(WelcomeViewController.selectSpecificLocation))
+        locationView.isUserInteractionEnabled = true
+        locationView.addGestureRecognizer(tapGestureRecognizer)
+        
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
+        }
+    
+    }
+    
+    func selectSpecificLocation(){
+        self.performSegue(withIdentifier: "selectSpecificLocation", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "selectSpecificLocation" {
+            let svc = segue.destination as? UINavigationController
+            let controller: SelectSpecificLocationController = svc?.topViewController as! SelectSpecificLocationController
+            controller.data = "Hi there"
         }
     }
     

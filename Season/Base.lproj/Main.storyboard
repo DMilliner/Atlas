@@ -301,40 +301,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmI-oo-fbe" userLabel="LocationLabel">
-                                <rect key="frame" x="16" y="72" width="160" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwR-8t-50E" userLabel="LocationValueLabel">
-                                <rect key="frame" x="199" y="72" width="160" height="21"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsV-Go-oex">
+                                <rect key="frame" x="16" y="72" width="343" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmI-oo-fbe" userLabel="LocationLabel">
+                                        <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwR-8t-50E" userLabel="LocationValueLabel">
+                                        <rect key="frame" x="58" y="8" width="247" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cnq-mK-YgF">
+                                        <rect key="frame" x="313" y="8" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="tz3-3Z-Ba6"/>
+                                            <constraint firstAttribute="width" constant="22" id="wLP-yW-pz1"/>
+                                        </constraints>
+                                        <state key="normal" title="&gt;"/>
+                                        <connections>
+                                            <segue destination="5sC-Xp-keX" kind="show" identifier="selectSpecificLocation" id="JNs-D9-NPy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="jzh-Sr-YkY"/>
+                                    <constraint firstItem="Cnq-mK-YgF" firstAttribute="leading" secondItem="NwR-8t-50E" secondAttribute="trailing" constant="8" id="08c-la-Z77"/>
+                                    <constraint firstItem="rmI-oo-fbe" firstAttribute="top" secondItem="OsV-Go-oex" secondAttribute="topMargin" id="36j-vW-cmw"/>
+                                    <constraint firstAttribute="height" constant="50" id="5fa-LV-uPe"/>
+                                    <constraint firstItem="Cnq-mK-YgF" firstAttribute="baseline" secondItem="NwR-8t-50E" secondAttribute="baseline" id="CHD-nO-P9d"/>
+                                    <constraint firstItem="NwR-8t-50E" firstAttribute="baseline" secondItem="rmI-oo-fbe" secondAttribute="baseline" id="gs3-eP-roy"/>
+                                    <constraint firstItem="Cnq-mK-YgF" firstAttribute="top" secondItem="OsV-Go-oex" secondAttribute="top" constant="8" id="itm-aC-aSl"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cnq-mK-YgF" secondAttribute="trailing" constant="8" id="jAM-7l-Ti0"/>
+                                    <constraint firstItem="rmI-oo-fbe" firstAttribute="leading" secondItem="OsV-Go-oex" secondAttribute="leadingMargin" id="jhn-Ae-2hs"/>
+                                    <constraint firstItem="NwR-8t-50E" firstAttribute="leading" secondItem="rmI-oo-fbe" secondAttribute="trailing" constant="8" symbolic="YES" id="wR2-po-MmN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rmI-oo-fbe" firstAttribute="leading" secondItem="Sca-YX-vg1" secondAttribute="leadingMargin" id="H0m-QA-Lh7"/>
-                            <constraint firstItem="rmI-oo-fbe" firstAttribute="top" secondItem="ynw-yQ-BE1" secondAttribute="bottom" constant="8" id="deC-Nl-0DW"/>
-                            <constraint firstItem="NwR-8t-50E" firstAttribute="trailing" secondItem="Sca-YX-vg1" secondAttribute="trailingMargin" id="hyQ-3j-wz2"/>
-                            <constraint firstItem="NwR-8t-50E" firstAttribute="baseline" secondItem="rmI-oo-fbe" secondAttribute="baseline" id="syS-Be-FZP"/>
-                            <constraint firstItem="NwR-8t-50E" firstAttribute="leading" secondItem="rmI-oo-fbe" secondAttribute="trailing" constant="23" id="tX2-Qd-GMo"/>
+                            <constraint firstItem="OsV-Go-oex" firstAttribute="centerX" secondItem="Sca-YX-vg1" secondAttribute="centerX" id="1a7-db-tmz"/>
+                            <constraint firstItem="OsV-Go-oex" firstAttribute="trailing" secondItem="Sca-YX-vg1" secondAttribute="trailingMargin" id="Fkv-Nm-UFf"/>
+                            <constraint firstItem="OsV-Go-oex" firstAttribute="leading" secondItem="Sca-YX-vg1" secondAttribute="leadingMargin" id="MeA-dc-2VM"/>
+                            <constraint firstItem="OsV-Go-oex" firstAttribute="top" secondItem="ynw-yQ-BE1" secondAttribute="bottom" constant="8" symbolic="YES" id="ZOi-op-DMp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Season" id="HlU-wB-XLd"/>
                     <connections>
                         <outlet property="locationLabel" destination="rmI-oo-fbe" id="lza-nI-4O5"/>
                         <outlet property="locationValueLabel" destination="NwR-8t-50E" id="ycF-kt-5mS"/>
+                        <outlet property="locationView" destination="OsV-Go-oex" id="g6A-gK-rBC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1w-j0-vZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2039.2" y="2379.7601199400301"/>
+            <point key="canvasLocation" x="-2039.2" y="2416.6416791604202"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aya-2y-pRX">
@@ -351,6 +376,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aw2-Wc-r3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-46" y="1665"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Q7X-cs-Zaf">
+            <objects>
+                <navigationController storyboardIdentifier="selectSpecificLocationNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5sC-Xp-keX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tD9-Wk-kop">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0GL-4X-bjH" kind="relationship" relationship="rootViewController" id="30d-1o-zK2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZU-xk-W4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1258" y="2417"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NXq-le-W50">
+            <objects>
+                <viewController id="0GL-4X-bjH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ngb-j3-Y1h"/>
+                        <viewControllerLayoutGuide type="bottom" id="wSu-rP-4OU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U6M-qc-KDa" customClass="Se">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zsn-pb-odj">
+                                <rect key="frame" x="67" y="311" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="E36-OQ-VMX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5pR-FF-MY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-489" y="2417"/>
         </scene>
         <!--fruisList-->
         <scene sceneID="24l-Pq-AFu">
