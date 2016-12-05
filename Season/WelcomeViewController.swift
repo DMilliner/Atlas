@@ -14,15 +14,16 @@ import SystemConfiguration
 class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     var window: UIWindow?
 
-    @IBOutlet var welcomeLabel: UILabel!
-    
+    @IBOutlet var locationLabel: UILabel!
+    @IBOutlet var locationValueLabel: UILabel!
+
     var locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        welcomeLabel.text = "Welcome to Season"
+        locationLabel.text = "\u{1F310} Localized in : "
         
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
@@ -74,9 +75,9 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             var region: String = ""
             var country: String = ""
             var worldRegion: String = "World"
+            var emojiRegion: String = "\u{1F310}"
 
-            
-            
+
             if(self.isInternetAvailable()){
                 placeMark = placemarks?[0]
                 print("dictionary = \(placeMark.addressDictionary)")
@@ -92,20 +93,26 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
                 if((region.range(of: "Europe")) != nil){
                     print("World region = Europe")
                     worldRegion = "Europe"
+                    emojiRegion = "\u{1F30D}"
                         
                 } else if((region.range(of: "Africa")) != nil){
                     print("World region = Africa")
                     worldRegion = "Africa"
-                        
+                    emojiRegion = "\u{1F30D}"
+                    
                 } else if((region.range(of: "Asia")) != nil){
                     print("World region = Asia")
                     worldRegion = "Asia"
-                        
+                    emojiRegion = "\u{1F30F}"
+                    
                 } else if((region.range(of: "Australia")) != nil){
                     print("World region = Oceania")
                     worldRegion = "Oceania"
-                        
+                    emojiRegion = "\u{1F30F}"
+                    
                 } else if((region.range(of: "America")) != nil){
+                    emojiRegion = "\u{1F30E}"
+
                     let northAmerica = ["Canada", "Mexico", "United States"]
                     let centralAmerica = ["Belize", "Costa Rica", "El Salvador", "Guatemala", "Honduras", "Nicaragua", "Panama", "Bahamas", "Barbados", "Cuba", "Dominican Republic", "Grenada", "Haiti", "Jamaica", "Trinidad Tobago"]
                     let southAmerica = ["Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "French Guinea", "Guyana", "Paraguay", "Peru", "Surinam", "Venezuela", "Uruguay"]
@@ -123,16 +130,23 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
                 } else if((region.range(of: "Pacific")) != nil){
                     print("World region = Pacific == Oceania")
                     worldRegion = "Oceania"
+                    emojiRegion = "\u{1F30F}"
+
                 } else {
                     print("World region = somewhere else...")
+                    emojiRegion = "\u{1F310}"
+
                 }
+                UserDefaults.standard.set(worldRegion, forKey: "savedWorldRegion")
             } else {
                 print("No Internet")
+                emojiRegion = "\u{1F310}"
+                worldRegion = UserDefaults.standard.string(forKey: "savedWorldRegion")!
             }
             
-            self.welcomeLabel.text = "Welcome to Season" + " in " + worldRegion + " ("+country+")."
+            self.locationLabel.text = emojiRegion + " Localized in : "
+            self.locationValueLabel.text = worldRegion + " \(country)"
             print("Country : \(country)")
-            UserDefaults.standard.set(worldRegion, forKey: "savedWorldRegion")
             
 //            for element in Market().getPomeFruitsCompleteListbyLocation(location: worldRegion) {
 //                print("Sooooooo \(element.name)")

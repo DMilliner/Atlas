@@ -17,7 +17,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -162,7 +162,7 @@
         <scene sceneID="r7l-gg-dq7">
             <objects>
                 <navigationController storyboardIdentifier="vegetableDetailNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vC3-pB-5Vb" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="DjV-YW-jjY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -180,7 +180,7 @@
                 <navigationController storyboardIdentifier="fruitsListNC" title="VegetablesNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f92-Of-Kco" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Vegies" image="Artichoke" id="pvK-Kf-xuW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Jw0-vl-A8P">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Jw0-vl-A8P">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -277,7 +277,7 @@
                 <navigationController storyboardIdentifier="welcomeNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3xa-XS-VAV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="home" id="8Ic-kR-6l5"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="782-rF-Tsu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="782-rF-Tsu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -289,7 +289,7 @@
             </objects>
             <point key="canvasLocation" x="-2039" y="1664"/>
         </scene>
-        <!--Welcome-->
+        <!--Season-->
         <scene sceneID="iP2-HP-2CC">
             <objects>
                 <viewController storyboardIdentifier="welcome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Dcq-ys-Kwp" customClass="WelcomeViewController" customModule="Season" customModuleProvider="target" sceneMemberID="viewController">
@@ -301,8 +301,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmI-oo-fbe">
-                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmI-oo-fbe" userLabel="LocationLabel">
+                                <rect key="frame" x="16" y="72" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwR-8t-50E" userLabel="LocationValueLabel">
+                                <rect key="frame" x="199" y="72" width="160" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="jzh-Sr-YkY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -311,16 +320,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rmI-oo-fbe" firstAttribute="leading" secondItem="Sca-YX-vg1" secondAttribute="leadingMargin" id="H0m-QA-Lh7"/>
-                            <constraint firstItem="rmI-oo-fbe" firstAttribute="leading" secondItem="Sca-YX-vg1" secondAttribute="leadingMargin" id="MFA-gB-SdQ"/>
-                            <constraint firstItem="rmI-oo-fbe" firstAttribute="centerY" secondItem="Sca-YX-vg1" secondAttribute="centerY" constant="-251" id="Mn8-Ot-JeQ"/>
-                            <constraint firstItem="rmI-oo-fbe" firstAttribute="centerX" secondItem="Sca-YX-vg1" secondAttribute="centerX" id="SsF-FB-PnO"/>
-                            <constraint firstItem="rmI-oo-fbe" firstAttribute="trailing" secondItem="Sca-YX-vg1" secondAttribute="trailingMargin" id="TOi-in-Rde"/>
                             <constraint firstItem="rmI-oo-fbe" firstAttribute="top" secondItem="ynw-yQ-BE1" secondAttribute="bottom" constant="8" id="deC-Nl-0DW"/>
+                            <constraint firstItem="NwR-8t-50E" firstAttribute="trailing" secondItem="Sca-YX-vg1" secondAttribute="trailingMargin" id="hyQ-3j-wz2"/>
+                            <constraint firstItem="NwR-8t-50E" firstAttribute="baseline" secondItem="rmI-oo-fbe" secondAttribute="baseline" id="syS-Be-FZP"/>
+                            <constraint firstItem="NwR-8t-50E" firstAttribute="leading" secondItem="rmI-oo-fbe" secondAttribute="trailing" constant="23" id="tX2-Qd-GMo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome" id="HlU-wB-XLd"/>
+                    <navigationItem key="navigationItem" title="Season" id="HlU-wB-XLd"/>
                     <connections>
-                        <outlet property="welcomeLabel" destination="rmI-oo-fbe" id="V12-qf-d5z"/>
+                        <outlet property="locationLabel" destination="rmI-oo-fbe" id="lza-nI-4O5"/>
+                        <outlet property="locationValueLabel" destination="NwR-8t-50E" id="ycF-kt-5mS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1w-j0-vZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -331,7 +340,7 @@
         <scene sceneID="Aya-2y-pRX">
             <objects>
                 <navigationController storyboardIdentifier="fruitDetailNC" id="97f-Re-r57" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Nu5-h8-BbF">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Nu5-h8-BbF">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
