@@ -33,7 +33,6 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         locationView.isUserInteractionEnabled = true
         locationView.addGestureRecognizer(tapGestureRecognizer)
         
-        
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -42,15 +41,25 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        let worldRegion = UserDefaults.standard.string(forKey: "savedWorldRegion")!
+        self.locationLabel.text = emojiByRegion(worldRegion) + " Localized in : "
+        self.locationValueLabel.text = worldRegion
+        
+    }
+    
     func selectSpecificLocation(){
         self.performSegue(withIdentifier: "selectSpecificLocation", sender: self)
+        locationManager.stopUpdatingLocation()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectSpecificLocation" {
             let svc = segue.destination as? UINavigationController
             let controller: SelectSpecificLocationController = svc?.topViewController as! SelectSpecificLocationController
-            controller.data = "Hi there"
+            controller.data = UserDefaults.standard.string(forKey: "savedWorldRegion")!
         }
     }
     
@@ -85,18 +94,15 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         let geoCoder = CLGeocoder()
         let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
-        // save the location
-        // if they have changed reverseGeocode
-        // else skip
+        
+        var region: String = ""
+        var country: String = ""
+        var worldRegion: String = "World"
+        var emojiRegion: String = "\u{1F310}"
         
         geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
             var placeMark: CLPlacemark!
-            var region: String = ""
-            var country: String = ""
-            var worldRegion: String = "World"
-            var emojiRegion: String = "\u{1F310}"
-
-
+            
             if(self.isInternetAvailable()){
                 placeMark = placemarks?[0]
                 print("dictionary = \(placeMark.addressDictionary)")
@@ -108,12 +114,12 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
                 print("region : \(region)")
                 print("country : \(country)")
                 
-
+                
                 if((region.range(of: "Europe")) != nil){
                     print("World region = Europe")
                     worldRegion = "Europe"
                     emojiRegion = "\u{1F30D}"
-                        
+                    
                 } else if((region.range(of: "Africa")) != nil){
                     print("World region = Africa")
                     worldRegion = "Africa"
@@ -131,11 +137,11 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
                     
                 } else if((region.range(of: "America")) != nil){
                     emojiRegion = "\u{1F30E}"
-
+                    
                     let northAmerica = ["Canada", "Mexico", "United States"]
                     let centralAmerica = ["Belize", "Costa Rica", "El Salvador", "Guatemala", "Honduras", "Nicaragua", "Panama", "Bahamas", "Barbados", "Cuba", "Dominican Republic", "Grenada", "Haiti", "Jamaica", "Trinidad Tobago"]
                     let southAmerica = ["Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "French Guinea", "Guyana", "Paraguay", "Peru", "Surinam", "Venezuela", "Uruguay"]
-                        
+                    
                     if(northAmerica.contains(country)){
                         print("World region = North America")
                         worldRegion = "North America"
@@ -150,13 +156,15 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
                     print("World region = Pacific == Oceania")
                     worldRegion = "Oceania"
                     emojiRegion = "\u{1F30F}"
-
+                    
                 } else {
                     print("World region = somewhere else...")
                     emojiRegion = "\u{1F310}"
-
+                    
                 }
                 UserDefaults.standard.set(worldRegion, forKey: "savedWorldRegion")
+                UserDefaults.standard.synchronize()
+                
             } else {
                 print("No Internet")
                 emojiRegion = "\u{1F310}"
@@ -165,18 +173,72 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             
             self.locationLabel.text = emojiRegion + " Localized in : "
             self.locationValueLabel.text = worldRegion + " \(country)"
-            print("Country : \(country)")
             
-//            for element in Market().getPomeFruitsCompleteListbyLocation(location: worldRegion) {
-//                print("Sooooooo \(element.name)")
-//            }
+            //            for element in Market().getPomeFruitsCompleteListbyLocation(location: worldRegion) {
+            //                print("Sooooooo \(element.name)")
+            //            }
         })
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Failed to find user's location: \(error.localizedDescription)")
+        self.locationLabel.text = emojiByRegion("World") + " Localized in : "
+        self.locationValueLabel.text = "World"
+        UserDefaults.standard.set("World", forKey: "savedWorldRegion")
+        UserDefaults.standard.synchronize()
     }
     
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            locationManager.requestAlwaysAuthorization()
+            break
+        case .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+            break
+        case .authorizedAlways:
+            locationManager.startUpdatingLocation()
+            break
+        case .restricted:
+            // restricted by e.g. parental controls. User can't enable Location Services
+            break
+        case .denied:
+            // user denied your app access to Location Services, but can grant access from Settings.app
+            break
+        }
+    }
+    
+    func emojiByRegion(_ location :String)->String{
+        var emojiToReturn = "\u{1F310}"
+        switch location {
+        case "North America":
+            emojiToReturn = "\u{1F30E}"
+            break
+        case "South America":
+            emojiToReturn = "\u{1F30E}"
+            break
+        case "Europe":
+            emojiToReturn = "\u{1F30D}"
+            break
+        case "Africa":
+            emojiToReturn = "\u{1F30D}"
+            break
+        case "Asia":
+            emojiToReturn = "\u{1F30F}"
+            break
+        case "Oceania":
+            emojiToReturn = "\u{1F30F}"
+            break
+        case "World":
+            emojiToReturn = "\u{1F310}"
+            break
+        default:
+            emojiToReturn = "\u{1F310}"
+            break
+        }
+        return emojiToReturn
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
