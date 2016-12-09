@@ -17,6 +17,9 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var locationValueLabel: UILabel!
     @IBOutlet var locationView: UIView!
+    @IBOutlet var imageSeparatorView: UIView!
+    @IBOutlet var imageSeparator2View: UIView!
+
 
     var locationManager = CLLocationManager()
 
@@ -25,6 +28,21 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         locationLabel.text = "\u{1F310} Localized in : "
+        
+        let gradient = CAGradientLayer()
+        gradient.frame = imageSeparatorView.bounds
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 1, y: 1)
+        gradient.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
+        imageSeparatorView.layer.insertSublayer(gradient, at: 0)
+        
+        let gradient2 = CAGradientLayer()
+        gradient2.frame = imageSeparatorView.bounds
+        gradient2.startPoint = CGPoint(x: 0, y: 0)
+        gradient2.endPoint = CGPoint(x: 1, y: 1)
+        gradient2.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
+        imageSeparator2View.layer.insertSublayer(gradient2, at: 0)
+
         
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
@@ -43,7 +61,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-
+        
         if let worldRegionExists = UserDefaults.standard.string(forKey: "savedWorldRegion") {
             self.locationLabel.text = emojiByRegion(worldRegionExists) + " Localized in : "
             self.locationValueLabel.text = worldRegionExists
@@ -187,10 +205,23 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Failed to find user's location: \(error.localizedDescription)")
-        self.locationLabel.text = emojiByRegion("World") + " Localized in : "
-        self.locationValueLabel.text = "World"
-        UserDefaults.standard.set("World", forKey: "savedWorldRegion")
-        UserDefaults.standard.synchronize()
+        let lError = error as! CLError
+        if(lError.code == CLError.locationUnknown || lError.code == CLError.denied){
+            if let worldRegionExists = UserDefaults.standard.string(forKey: "savedWorldRegion") {
+                self.locationLabel.text = emojiByRegion(worldRegionExists) + " Localized in : "
+                self.locationValueLabel.text = worldRegionExists
+            } else {
+                self.locationLabel.text = emojiByRegion("World") + " Localized in : "
+                self.locationValueLabel.text = "World"
+                UserDefaults.standard.set("World", forKey: "savedWorldRegion")
+                UserDefaults.standard.synchronize()
+            }
+        } else {
+            self.locationLabel.text = emojiByRegion("World") + " Localized in : "
+            self.locationValueLabel.text = "World"
+            UserDefaults.standard.set("World", forKey: "savedWorldRegion")
+            UserDefaults.standard.synchronize()
+        }
     }
     
     func emojiByRegion(_ location :String)->String{

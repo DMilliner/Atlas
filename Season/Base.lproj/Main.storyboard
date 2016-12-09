@@ -9,6 +9,14 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Display-Semibold.otf">
+            <string>SFUIDisplay-Semibold</string>
+        </array>
+        <array key="SF-UI-Display-Thin.otf">
+            <string>SFUIDisplay-Thin</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--VegetablesNC-->
         <scene sceneID="pY4-Hu-kfo">
@@ -18,7 +26,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -54,7 +62,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HR6-ri-P3a" id="0zp-Qh-W2I">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="ol">
@@ -163,7 +171,7 @@
         <scene sceneID="r7l-gg-dq7">
             <objects>
                 <navigationController storyboardIdentifier="vegetableDetailNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vC3-pB-5Vb" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="DjV-YW-jjY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -181,7 +189,7 @@
                 <navigationController storyboardIdentifier="fruitsListNC" title="VegetablesNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f92-Of-Kco" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Fruits" image="fruit_8" id="pvK-Kf-xuW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Jw0-vl-A8P">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Jw0-vl-A8P">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -278,7 +286,7 @@
                 <navigationController storyboardIdentifier="welcomeNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3xa-XS-VAV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Welcome" image="home" id="8Ic-kR-6l5"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="782-rF-Tsu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="782-rF-Tsu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -303,17 +311,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsV-Go-oex">
-                                <rect key="frame" x="16" y="72" width="343" height="50"/>
+                                <rect key="frame" x="16" y="80" width="343" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmI-oo-fbe" userLabel="LocationLabel">
-                                        <rect key="frame" x="8" y="8" width="5" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="8" y="8" width="4" height="20"/>
+                                        <fontDescription key="fontDescription" name="SFUIDisplay-Thin" family="SF UI Display" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwR-8t-50E" userLabel="LocationValueLabel">
-                                        <rect key="frame" x="21" y="7" width="284" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="20" y="8" width="285" height="20"/>
+                                        <fontDescription key="fontDescription" name="SFUIDisplay-Thin" family="SF UI Display" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -352,17 +360,65 @@
                                     <constraint firstItem="NwR-8t-50E" firstAttribute="leading" secondItem="rmI-oo-fbe" secondAttribute="trailing" constant="8" symbolic="YES" id="wR2-po-MmN"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="anu-IS-6od">
+                                <rect key="frame" x="0.0" y="64" width="375" height="16"/>
+                                <color key="backgroundColor" red="0.29803921568627451" green="0.85098039215686272" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="7sq-Rd-Bb5"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4N4-kT-Y8e">
+                                <rect key="frame" x="0.0" y="120" width="375" height="16"/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="qWJ-FN-Pr2"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sC5-4h-fAD">
+                                <rect key="frame" x="8" y="144" width="359" height="305"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Random now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0I-yC-7BF">
+                                        <rect key="frame" x="8" y="8" width="217" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SFUIDisplay-Semibold" family="SF UI Display" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List ....." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IL0-8H-QkY">
+                                        <rect key="frame" x="8" y="66" width="351" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="anu-IS-6od" firstAttribute="top" secondItem="ynw-yQ-BE1" secondAttribute="bottom" id="03N-Yj-5oo"/>
+                            <constraint firstItem="sC5-4h-fAD" firstAttribute="trailing" secondItem="Sca-YX-vg1" secondAttribute="trailingMargin" constant="8" id="0VJ-7j-7a1"/>
                             <constraint firstItem="OsV-Go-oex" firstAttribute="centerX" secondItem="Sca-YX-vg1" secondAttribute="centerX" id="1a7-db-tmz"/>
+                            <constraint firstAttribute="trailing" secondItem="4N4-kT-Y8e" secondAttribute="trailing" id="3SB-FX-dGQ"/>
+                            <constraint firstItem="4N4-kT-Y8e" firstAttribute="leading" secondItem="Sca-YX-vg1" secondAttribute="leading" id="CRu-1h-eqG"/>
                             <constraint firstItem="OsV-Go-oex" firstAttribute="trailing" secondItem="Sca-YX-vg1" secondAttribute="trailingMargin" id="Fkv-Nm-UFf"/>
+                            <constraint firstItem="OsV-Go-oex" firstAttribute="top" secondItem="anu-IS-6od" secondAttribute="bottom" id="KxM-zs-hoP"/>
                             <constraint firstItem="OsV-Go-oex" firstAttribute="leading" secondItem="Sca-YX-vg1" secondAttribute="leadingMargin" id="MeA-dc-2VM"/>
-                            <constraint firstItem="OsV-Go-oex" firstAttribute="top" secondItem="ynw-yQ-BE1" secondAttribute="bottom" constant="8" symbolic="YES" id="ZOi-op-DMp"/>
+                            <constraint firstItem="anu-IS-6od" firstAttribute="leading" secondItem="Sca-YX-vg1" secondAttribute="leading" id="OKP-5J-v1S"/>
+                            <constraint firstAttribute="trailing" secondItem="anu-IS-6od" secondAttribute="trailing" id="SuK-cK-09s"/>
+                            <constraint firstItem="4N4-kT-Y8e" firstAttribute="top" secondItem="anu-IS-6od" secondAttribute="bottom" constant="40" id="V77-G9-Qvl"/>
+                            <constraint firstItem="sC5-4h-fAD" firstAttribute="leading" secondItem="Sca-YX-vg1" secondAttribute="leading" constant="8" id="grW-Fm-4ed"/>
+                            <constraint firstItem="anu-IS-6od" firstAttribute="centerX" secondItem="Sca-YX-vg1" secondAttribute="centerX" id="hLQ-vP-0S8"/>
+                            <constraint firstItem="sC5-4h-fAD" firstAttribute="top" secondItem="4N4-kT-Y8e" secondAttribute="bottom" constant="8" id="kt9-Q9-EoJ"/>
+                            <constraint firstItem="dZO-l0-uvY" firstAttribute="top" secondItem="sC5-4h-fAD" secondAttribute="bottom" constant="169" id="o3X-fA-KEx"/>
+                            <constraint firstItem="4N4-kT-Y8e" firstAttribute="centerX" secondItem="Sca-YX-vg1" secondAttribute="centerX" id="uT7-z5-7qc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Season" id="HlU-wB-XLd"/>
                     <connections>
+                        <outlet property="imageSeparator2View" destination="4N4-kT-Y8e" id="Xre-p1-wLR"/>
+                        <outlet property="imageSeparatorView" destination="anu-IS-6od" id="BGV-Pm-waL"/>
                         <outlet property="locationLabel" destination="rmI-oo-fbe" id="lza-nI-4O5"/>
                         <outlet property="locationValueLabel" destination="NwR-8t-50E" id="ycF-kt-5mS"/>
                         <outlet property="locationView" destination="OsV-Go-oex" id="g6A-gK-rBC"/>
@@ -370,13 +426,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1w-j0-vZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2040" y="2496"/>
+            <point key="canvasLocation" x="-2040.8" y="2495.8020989505249"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aya-2y-pRX">
             <objects>
                 <navigationController storyboardIdentifier="fruitDetailNC" id="97f-Re-r57" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Nu5-h8-BbF">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Nu5-h8-BbF">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -498,7 +554,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nqc-vM-BpM" id="4dk-qr-0fZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -533,7 +589,7 @@
         <image name="veg_8" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wIo-xi-tSR"/>
+        <segue reference="EiG-4k-QP8"/>
         <segue reference="Tll-UG-LXB"/>
     </inferredMetricsTieBreakers>
 </document>
