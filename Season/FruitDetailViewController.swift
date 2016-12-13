@@ -12,7 +12,20 @@ class FruitDetailViewController: UIViewController {
 
     @IBOutlet weak var fruitNameLabel: UILabel!
     @IBOutlet weak var fruitImage: UIImageView!
+    
+    
+    @IBOutlet weak var RedViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var RedViewWidth: NSLayoutConstraint!
 
+    
+    @IBOutlet weak var PCa: NSLayoutConstraint!
+    @IBOutlet weak var PCb: NSLayoutConstraint!
+    @IBOutlet weak var PCc: NSLayoutConstraint!
+    
+    @IBOutlet weak var LCa: NSLayoutConstraint!
+    @IBOutlet weak var LCb: NSLayoutConstraint!
+    @IBOutlet weak var LCc: NSLayoutConstraint!
+    
     func configureNameView() {
         // Update the user interface for the detail item.
         if let fruitName = self.fruitNameItem {
@@ -68,6 +81,55 @@ class FruitDetailViewController: UIViewController {
             // Update the view.
             self.configureImageView()
         }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator){
+        
+        coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            let orient = UIApplication.shared.statusBarOrientation
+            
+            switch orient {
+            case .portrait:
+                print("Portrait")
+                self.applyPortraitConstraint()
+                break
+            // Do something
+            default:
+                print("LandScape")
+                // Do something else
+                self.applyLandScapeConstraint()
+                break
+            }
+        }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+            print("rotation completed")
+        })
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+    
+    func applyPortraitConstraint(){
+        self.view.addConstraint(self.RedViewHeight)
+        self.view.addConstraint(self.PCa)
+        self.view.addConstraint(self.PCb)
+        self.view.addConstraint(self.PCc)
+        
+        self.view.removeConstraint(self.RedViewWidth)
+        self.view.removeConstraint(self.LCa)
+        self.view.removeConstraint(self.LCb)
+        self.view.removeConstraint(self.LCc)
+    }
+    
+    func applyLandScapeConstraint(){
+        
+        self.view.removeConstraint(self.RedViewHeight)
+        self.view.removeConstraint(self.PCa)
+        self.view.removeConstraint(self.PCb)
+        self.view.removeConstraint(self.PCc)
+        
+        self.view.addConstraint(self.RedViewWidth)
+        self.view.addConstraint(self.LCa)
+        self.view.addConstraint(self.LCb)
+        self.view.addConstraint(self.LCc)
     }
 }
 
