@@ -13,18 +13,49 @@ class FruitDetailViewController: UIViewController {
     @IBOutlet weak var fruitNameLabel: UILabel!
     @IBOutlet weak var fruitImage: UIImageView!
     
+    // FirstView Constraints
+    @IBOutlet weak var L_FirstViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var L_FirstViewTop: NSLayoutConstraint!
+    @IBOutlet weak var L_FirstViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var L_FirstViewTrailing: NSLayoutConstraint!
     
-    @IBOutlet weak var RedViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var RedViewWidth: NSLayoutConstraint!
-
+    @IBOutlet weak var P_FirstViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var P_FirstViewTop: NSLayoutConstraint!
+    @IBOutlet weak var P_FirstViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var P_FirstViewTrailing: NSLayoutConstraint!
     
-    @IBOutlet weak var PCa: NSLayoutConstraint!
-    @IBOutlet weak var PCb: NSLayoutConstraint!
-    @IBOutlet weak var PCc: NSLayoutConstraint!
+    // SecondView Constraints
+    @IBOutlet weak var L_SecondViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var L_SecondViewTop: NSLayoutConstraint!
+    @IBOutlet weak var L_SecondViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var L_SecondViewTrailing: NSLayoutConstraint!
     
-    @IBOutlet weak var LCa: NSLayoutConstraint!
-    @IBOutlet weak var LCb: NSLayoutConstraint!
-    @IBOutlet weak var LCc: NSLayoutConstraint!
+    @IBOutlet weak var P_SecondViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var P_SecondViewTop: NSLayoutConstraint!
+    @IBOutlet weak var P_SecondViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var P_SecondViewTrailing: NSLayoutConstraint!
+    
+    // ImageView Constraints
+    @IBOutlet weak var L_ImageViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var L_ImageViewTop: NSLayoutConstraint!
+    @IBOutlet weak var L_ImageViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var L_ImageViewTrailing: NSLayoutConstraint!
+    
+    @IBOutlet weak var P_ImageViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var P_ImageViewTop: NSLayoutConstraint!
+    @IBOutlet weak var P_ImageViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var P_ImageViewTrailing: NSLayoutConstraint!
+    
+    // Label Constraints
+    @IBOutlet weak var L_LabelBottom: NSLayoutConstraint!
+    @IBOutlet weak var L_LabelTop: NSLayoutConstraint!
+    @IBOutlet weak var L_LabelLeading: NSLayoutConstraint!
+    @IBOutlet weak var L_LabelTrailing: NSLayoutConstraint!
+    
+    @IBOutlet weak var P_LabelBottom: NSLayoutConstraint!
+    @IBOutlet weak var P_LabelTop: NSLayoutConstraint!
+    @IBOutlet weak var P_LabelLeading: NSLayoutConstraint!
+    @IBOutlet weak var P_LabelTrailing: NSLayoutConstraint!
     
     func configureNameView() {
         // Update the user interface for the detail item.
@@ -43,13 +74,11 @@ class FruitDetailViewController: UIViewController {
         if let fruitSection = self.fruitSectionItem {
             print("-> Fruit Section " + fruitSection.description)
             if let image = self.fruitImage {
-                
                 if(fruitSection == "Berries"){
                     image.backgroundColor = UIColor.init(red: 30/255.0, green: 90/255.0, blue: 225/255.0, alpha: 1.0)
                 } else {
                     image.backgroundColor = UIColor.init(red: 245/255.0, green: 90/255.0, blue: 65/255.0, alpha: 1.0)
                 }
-                
             }
         }else {
             self.navigationController!.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "fruitsList") as UIViewController, animated: false)
@@ -59,7 +88,6 @@ class FruitDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view, typically from a nib.
         self.configureNameView()
         self.configureImageView()
@@ -71,37 +99,16 @@ class FruitDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+
         super.viewWillAppear(animated)
         
-        switch UIApplication.shared.statusBarOrientation {
-        case .portrait:
-            print("VWA Portrait")
-            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+        if UIApplication.shared.statusBarOrientation.isLandscape {
+            print("-- landscape")
+            self.applyLandScapeConstraint()
+        } else if UIApplication.shared.statusBarOrientation.isPortrait { // else portrait
+            print("-- portrait")
             self.applyPortraitConstraint()
-            break
-        case .landscapeRight:
-            print("VWA LandScape R")
-            UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
-            self.applyLandScapeConstraint()
-            _ = self.shouldAutorotate
-            break
-        case .landscapeLeft:
-            print("VWA LandScape L")
-            UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
-            self.applyLandScapeConstraint()
-            _ = self.shouldAutorotate
-            break
-        default:
-            print("default")
-            break
         }
-    }
-    
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.portrait
-    }
-    override var preferredInterfaceOrientationForPresentation : UIInterfaceOrientation {
-        return UIInterfaceOrientation.portrait
     }
     
     var fruitNameItem: String? {
@@ -118,6 +125,17 @@ class FruitDetailViewController: UIViewController {
         }
     }
     
+//    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+//        // if landscape
+//        if UIInterfaceOrientationIsLandscape(toInterfaceOrientation) {
+//            print("-- landscape")
+//            self.applyLandScapeConstraint()
+//        } else { // else portrait
+//            print("-- portrait")
+//            self.applyPortraitConstraint()
+//        }
+//    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator){
         
         coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
@@ -126,19 +144,14 @@ class FruitDetailViewController: UIViewController {
             
             switch orient {
             case .portrait:
-                print("VWT Portrait")
+                print("Portrait")
                 self.applyPortraitConstraint()
                 break
-            case .landscapeRight:
-                print("VWT LandScape")
-                self.applyLandScapeConstraint()
-                break
-            case .landscapeLeft:
-                print("VWT LandScape")
-                self.applyLandScapeConstraint()
-                break
+            // Do something
             default:
-                print("default")
+                print("LandScape")
+                // Do something else
+                self.applyLandScapeConstraint()
                 break
             }
         }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
@@ -148,28 +161,76 @@ class FruitDetailViewController: UIViewController {
     }
     
     func applyPortraitConstraint(){
-        self.view.addConstraint(self.RedViewHeight)
-        self.view.addConstraint(self.PCa)
-        self.view.addConstraint(self.PCb)
-        self.view.addConstraint(self.PCc)
+        self.view.addConstraint(self.P_FirstViewTop)
+        self.view.addConstraint(self.P_FirstViewBottom)
+        self.view.addConstraint(self.P_FirstViewLeading)
+        self.view.addConstraint(self.P_FirstViewTrailing)
+        self.view.addConstraint(self.P_SecondViewTop)
+        self.view.addConstraint(self.P_SecondViewBottom)
+        self.view.addConstraint(self.P_SecondViewTrailing)
+        self.view.addConstraint(self.P_SecondViewLeading)
+        self.view.addConstraint(self.P_ImageViewTop)
+        self.view.addConstraint(self.P_ImageViewBottom)
+        self.view.addConstraint(self.P_ImageViewTrailing)
+        self.view.addConstraint(self.P_ImageViewLeading)
+        self.view.addConstraint(self.P_LabelTop)
+        self.view.addConstraint(self.P_LabelBottom)
+        self.view.addConstraint(self.P_LabelTrailing)
+        self.view.addConstraint(self.P_LabelLeading)
         
-        self.view.removeConstraint(self.RedViewWidth)
-        self.view.removeConstraint(self.LCa)
-        self.view.removeConstraint(self.LCb)
-        self.view.removeConstraint(self.LCc)
+        self.view.removeConstraint(self.L_FirstViewTop)
+        self.view.removeConstraint(self.L_FirstViewBottom)
+        self.view.removeConstraint(self.L_FirstViewLeading)
+        self.view.removeConstraint(self.L_FirstViewTrailing)
+        self.view.removeConstraint(self.L_SecondViewTop)
+        self.view.removeConstraint(self.L_SecondViewBottom)
+        self.view.removeConstraint(self.L_SecondViewTrailing)
+        self.view.removeConstraint(self.L_SecondViewLeading)
+        self.view.removeConstraint(self.L_ImageViewTop)
+        self.view.removeConstraint(self.L_ImageViewBottom)
+        self.view.removeConstraint(self.L_ImageViewTrailing)
+        self.view.removeConstraint(self.L_ImageViewLeading)
+        self.view.removeConstraint(self.L_LabelTop)
+        self.view.removeConstraint(self.L_LabelBottom)
+        self.view.removeConstraint(self.L_LabelTrailing)
+        self.view.removeConstraint(self.L_LabelLeading)
     }
     
     func applyLandScapeConstraint(){
+        self.view.removeConstraint(self.P_FirstViewTop)
+        self.view.removeConstraint(self.P_FirstViewBottom)
+        self.view.removeConstraint(self.P_FirstViewLeading)
+        self.view.removeConstraint(self.P_FirstViewTrailing)
+        self.view.removeConstraint(self.P_SecondViewTop)
+        self.view.removeConstraint(self.P_SecondViewBottom)
+        self.view.removeConstraint(self.P_SecondViewTrailing)
+        self.view.removeConstraint(self.P_SecondViewLeading)
+        self.view.removeConstraint(self.P_ImageViewTop)
+        self.view.removeConstraint(self.P_ImageViewBottom)
+        self.view.removeConstraint(self.P_ImageViewTrailing)
+        self.view.removeConstraint(self.P_ImageViewLeading)
+        self.view.removeConstraint(self.P_LabelTop)
+        self.view.removeConstraint(self.P_LabelBottom)
+        self.view.removeConstraint(self.P_LabelTrailing)
+        self.view.removeConstraint(self.P_LabelLeading)
         
-        self.view.removeConstraint(self.RedViewHeight)
-        self.view.removeConstraint(self.PCa)
-        self.view.removeConstraint(self.PCb)
-        self.view.removeConstraint(self.PCc)
-        
-        self.view.addConstraint(self.RedViewWidth)
-        self.view.addConstraint(self.LCa)
-        self.view.addConstraint(self.LCb)
-        self.view.addConstraint(self.LCc)
+        self.view.addConstraint(self.L_FirstViewTop)
+        self.view.addConstraint(self.L_FirstViewBottom)
+        self.view.addConstraint(self.L_FirstViewLeading)
+        self.view.addConstraint(self.L_FirstViewTrailing)
+        self.view.addConstraint(self.L_SecondViewTop)
+        self.view.addConstraint(self.L_SecondViewBottom)
+        self.view.addConstraint(self.L_SecondViewTrailing)
+        self.view.addConstraint(self.L_SecondViewLeading)
+        self.view.addConstraint(self.L_ImageViewTop)
+        self.view.addConstraint(self.L_ImageViewBottom)
+        self.view.addConstraint(self.L_ImageViewTrailing)
+        self.view.addConstraint(self.L_ImageViewLeading)
+        self.view.addConstraint(self.L_LabelTop)
+        self.view.addConstraint(self.L_LabelBottom)
+        self.view.addConstraint(self.L_LabelTrailing)
+        self.view.addConstraint(self.L_LabelLeading)
     }
+
 }
 
