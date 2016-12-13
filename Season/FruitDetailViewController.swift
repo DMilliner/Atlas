@@ -59,6 +59,7 @@ class FruitDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         self.configureNameView()
         self.configureImageView()
@@ -67,6 +68,40 @@ class FruitDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        switch UIApplication.shared.statusBarOrientation {
+        case .portrait:
+            print("VWA Portrait")
+            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+            self.applyPortraitConstraint()
+            break
+        case .landscapeRight:
+            print("VWA LandScape R")
+            UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+            self.applyLandScapeConstraint()
+            _ = self.shouldAutorotate
+            break
+        case .landscapeLeft:
+            print("VWA LandScape L")
+            UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
+            self.applyLandScapeConstraint()
+            _ = self.shouldAutorotate
+            break
+        default:
+            print("default")
+            break
+        }
+    }
+    
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    override var preferredInterfaceOrientationForPresentation : UIInterfaceOrientation {
+        return UIInterfaceOrientation.portrait
     }
     
     var fruitNameItem: String? {
@@ -91,14 +126,19 @@ class FruitDetailViewController: UIViewController {
             
             switch orient {
             case .portrait:
-                print("Portrait")
+                print("VWT Portrait")
                 self.applyPortraitConstraint()
                 break
-            // Do something
-            default:
-                print("LandScape")
-                // Do something else
+            case .landscapeRight:
+                print("VWT LandScape")
                 self.applyLandScapeConstraint()
+                break
+            case .landscapeLeft:
+                print("VWT LandScape")
+                self.applyLandScapeConstraint()
+                break
+            default:
+                print("default")
                 break
             }
         }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in

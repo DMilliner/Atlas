@@ -111,6 +111,54 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         return (isReachable && !needsConnection)
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator){
+        
+        coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            let orient = UIApplication.shared.statusBarOrientation
+            
+            switch orient {
+            case .portrait:
+                print("Portrait")
+                let gradient = CAGradientLayer()
+                gradient.frame = self.imageSeparatorView.bounds
+                gradient.startPoint = CGPoint(x: 0, y: 0)
+                gradient.endPoint = CGPoint(x: 1, y: 1)
+                gradient.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
+                self.imageSeparatorView.layer.insertSublayer(gradient, at: 0)
+                
+                let gradient2 = CAGradientLayer()
+                gradient2.frame = self.imageSeparatorView.bounds
+                gradient2.startPoint = CGPoint(x: 0, y: 0)
+                gradient2.endPoint = CGPoint(x: 1, y: 1)
+                gradient2.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
+                self.imageSeparator2View.layer.insertSublayer(gradient2, at: 0)
+                break
+            // Do something
+            default:
+                print("LandScape")
+                // Do something else
+                let gradient = CAGradientLayer()
+                gradient.frame = self.imageSeparatorView.bounds
+                gradient.startPoint = CGPoint(x: 0, y: 0)
+                gradient.endPoint = CGPoint(x: 1, y: 1)
+                gradient.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
+                self.imageSeparatorView.layer.insertSublayer(gradient, at: 0)
+                
+                let gradient2 = CAGradientLayer()
+                gradient2.frame = self.imageSeparatorView.bounds
+                gradient2.startPoint = CGPoint(x: 0, y: 0)
+                gradient2.endPoint = CGPoint(x: 1, y: 1)
+                gradient2.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
+                self.imageSeparator2View.layer.insertSublayer(gradient2, at: 0)
+                break
+            }
+        }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+            print("rotation completed")
+        })
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
