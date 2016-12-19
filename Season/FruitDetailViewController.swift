@@ -91,6 +91,22 @@ class FruitDetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.configureNameView()
         self.configureImageView()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(FruitDetailViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    func rotated() {
+        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation))
+        {
+            print(" --- landscape")
+            applyFruitLandScapeConstraint()
+        }
+        
+        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation))
+        {
+            print(" --- Portrait")
+            applyFruitPortraitConstraint()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -99,16 +115,7 @@ class FruitDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
         super.viewWillAppear(animated)
-        
-        if UIApplication.shared.statusBarOrientation.isLandscape {
-            print("-- landscape")
-            self.applyLandScapeConstraint()
-        } else if UIApplication.shared.statusBarOrientation.isPortrait { // else portrait
-            print("-- portrait")
-            self.applyPortraitConstraint()
-        }
     }
     
     var fruitNameItem: String? {
@@ -128,30 +135,36 @@ class FruitDetailViewController: UIViewController {
 //    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
 //        // if landscape
 //        if UIInterfaceOrientationIsLandscape(toInterfaceOrientation) {
-//            print("-- landscape")
-//            self.applyLandScapeConstraint()
+//            print("--  -F- wR --  landscape")
+//            self.applyFruitLandScapeConstraint()
 //        } else { // else portrait
 //            print("-- portrait")
-//            self.applyPortraitConstraint()
+//            self.applyFruitPortraitConstraint()
 //        }
 //    }
+    
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//        let orientation: UIInterfaceOrientationMask = [UIInterfaceOrientationMask.portrait, UIInterfaceOrientationMask.landscape]
+//        return orientation
+//    }
+//    
+//    override var shouldAutorotate: Bool {
+//        return false
+//    }
+    
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator){
         
         coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
             
-            let orient = UIApplication.shared.statusBarOrientation
-            
-            switch orient {
+            switch UIApplication.shared.statusBarOrientation {
             case .portrait:
                 print("Portrait")
-                self.applyPortraitConstraint()
+                self.applyFruitPortraitConstraint()
                 break
-            // Do something
             default:
                 print("LandScape")
-                // Do something else
-                self.applyLandScapeConstraint()
+                self.applyFruitLandScapeConstraint()
                 break
             }
         }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
@@ -160,7 +173,7 @@ class FruitDetailViewController: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
     }
     
-    func applyPortraitConstraint(){
+    func applyFruitPortraitConstraint(){
         self.view.addConstraint(self.P_FirstViewTop)
         self.view.addConstraint(self.P_FirstViewBottom_alt)
         self.view.addConstraint(self.P_FirstViewLeading)
@@ -196,7 +209,7 @@ class FruitDetailViewController: UIViewController {
         self.view.addConstraint(self.ImageViewAspectRatio)
     }
     
-    func applyLandScapeConstraint(){
+    func applyFruitLandScapeConstraint(){
         self.view.removeConstraint(self.P_FirstViewTop)
         self.view.removeConstraint(self.P_FirstViewBottom_alt)
         self.view.removeConstraint(self.P_FirstViewLeading)
@@ -231,6 +244,5 @@ class FruitDetailViewController: UIViewController {
         self.view.addConstraint(self.ImageViewHeight)
         self.view.addConstraint(self.ImageViewAspectRatio)
     }
-
 }
 

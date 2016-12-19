@@ -109,32 +109,137 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="75" y="316" width="225" height="35"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bac-4U-Q1J" userLabel="ViewA">
+                                <rect key="frame" x="16" y="64" width="343" height="164"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="brb-nd-xol">
+                                        <rect key="frame" x="107.5" y="18" width="128" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="brb-nd-xol" secondAttribute="height" multiplier="1:1" id="A8w-hu-I0j"/>
+                                            <constraint firstAttribute="height" constant="128" id="drM-3B-TBq" userLabel="Image View Height"/>
+                                            <constraint firstAttribute="width" constant="128" id="oOq-fA-FZA" userLabel="Image View Width"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="Idh-Lo-jd4"/>
+                                    <constraint firstItem="brb-nd-xol" firstAttribute="leading" secondItem="Bac-4U-Q1J" secondAttribute="leading" constant="18" id="DKU-ME-NT4" userLabel="L - Fruit Image.leading = leading + 18"/>
+                                    <constraint firstAttribute="trailing" secondItem="brb-nd-xol" secondAttribute="trailing" constant="18" id="SZd-hP-oXv" userLabel="L - trailing = Fruit Image.trailing + 18"/>
+                                    <constraint firstItem="brb-nd-xol" firstAttribute="centerX" secondItem="Bac-4U-Q1J" secondAttribute="centerX" id="Twm-JY-4uF" userLabel="P - Image View CenterX"/>
+                                    <constraint firstItem="brb-nd-xol" firstAttribute="centerY" secondItem="Bac-4U-Q1J" secondAttribute="centerY" id="XDo-c3-n0V" userLabel="L - Image View CenterY"/>
+                                    <constraint firstAttribute="bottom" secondItem="brb-nd-xol" secondAttribute="bottom" constant="18" id="rzK-k4-2UY" userLabel="P - bottom = Fruit Image.bottom + 18"/>
+                                    <constraint firstItem="brb-nd-xol" firstAttribute="top" secondItem="Bac-4U-Q1J" secondAttribute="top" constant="18" id="tBe-id-NXE" userLabel="P - Fruit Image.top = top + 18"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DKU-ME-NT4"/>
+                                        <exclude reference="SZd-hP-oXv"/>
+                                        <exclude reference="XDo-c3-n0V"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tAw-4L-wGe" userLabel="ViewB">
+                                <rect key="frame" x="16" y="244" width="343" height="415"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2N6-Lw-ijM">
+                                        <rect key="frame" x="16" y="197" width="311" height="21"/>
+                                        <color key="backgroundColor" red="0.081125952299999998" green="0.77097171549999999" blue="0.71554422380000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.77335369590000003" green="0.13564899559999999" blue="0.080728746949999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2N6-Lw-ijM" secondAttribute="trailing" constant="16" id="1Ke-AM-LwP" userLabel="L - trailing = Fruit Name Label.trailing + 152"/>
+                                    <constraint firstItem="2N6-Lw-ijM" firstAttribute="centerY" secondItem="tAw-4L-wGe" secondAttribute="centerY" id="4Kc-Vr-UO1" userLabel="P - Label CenterY"/>
+                                    <constraint firstItem="2N6-Lw-ijM" firstAttribute="leading" secondItem="tAw-4L-wGe" secondAttribute="leading" constant="16" id="5Br-vM-ct6" userLabel="P - Fruit Name Label.leading = leading + 59"/>
+                                    <constraint firstAttribute="trailing" secondItem="2N6-Lw-ijM" secondAttribute="trailing" constant="16" id="8g8-Js-jFK" userLabel="P - trailing = Fruit Name Label.trailing + 68"/>
+                                    <constraint firstItem="2N6-Lw-ijM" firstAttribute="centerY" secondItem="tAw-4L-wGe" secondAttribute="centerY" id="P1g-JJ-UP7" userLabel="L - Label CenterY"/>
+                                    <constraint firstItem="2N6-Lw-ijM" firstAttribute="leading" secondItem="tAw-4L-wGe" secondAttribute="leading" constant="16" id="X1K-TC-npT" userLabel="L - Fruit Name Label.leading = leading + 152"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="X1K-TC-npT"/>
+                                        <exclude reference="1Ke-AM-LwP"/>
+                                        <exclude reference="P1g-JJ-UP7"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="ESg-0E-VWZ"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="xQv-wf-Ov3"/>
+                            <constraint firstItem="tAw-4L-wGe" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="1yi-6V-2bX" userLabel="P - ViewB.trailing = trailingMargin"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="tAw-4L-wGe" secondAttribute="bottom" id="4so-Ac-u5g" userLabel="L - Second View Bottom"/>
+                            <constraint firstItem="tAw-4L-wGe" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="53i-ss-Rwl" userLabel="L - Second View Trailing"/>
+                            <constraint firstItem="Bac-4U-Q1J" firstAttribute="bottom" secondItem="tAw-4L-wGe" secondAttribute="top" constant="-16" id="6aR-uh-fDO" userLabel="P - ViewB.top = ViewA.bottom + 16"/>
+                            <constraint firstItem="tAw-4L-wGe" firstAttribute="top" secondItem="Bac-4U-Q1J" secondAttribute="bottom" constant="16" id="9RN-4X-w2x" userLabel="P - ViewB.top = ViewA.bottom + 16"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="tAw-4L-wGe" secondAttribute="bottom" constant="8" id="QPs-Vp-qn0" userLabel="P - Bottom Layout Guide.top = ViewB.bottom + 8"/>
+                            <constraint firstItem="Bac-4U-Q1J" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="Rds-yG-93Q" userLabel="P - ViewA.trailing = trailingMargin"/>
+                            <constraint firstItem="Bac-4U-Q1J" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="16" id="V9n-Et-POg" userLabel="L - First View Leading"/>
+                            <constraint firstItem="tAw-4L-wGe" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="Z3N-Df-kbL" userLabel="P - ViewB.leading = leadingMargin"/>
+                            <constraint firstItem="tAw-4L-wGe" firstAttribute="leading" secondItem="Bac-4U-Q1J" secondAttribute="trailing" constant="42" id="bma-Nh-quG" userLabel="L - First View Trailing alt"/>
+                            <constraint firstItem="Bac-4U-Q1J" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="dFU-zC-fPc" userLabel="P - ViewA.top = Top Layout Guide.bottom"/>
+                            <constraint firstItem="Bac-4U-Q1J" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="dYP-4m-1gR" userLabel="L - First View Top"/>
+                            <constraint firstItem="tAw-4L-wGe" firstAttribute="leading" secondItem="Bac-4U-Q1J" secondAttribute="trailing" constant="42" id="iKv-nv-uKJ" userLabel="L - Second View Leading"/>
+                            <constraint firstItem="Bac-4U-Q1J" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="sBI-Fd-kYd" userLabel="P - ViewA.leading = leadingMargin"/>
+                            <constraint firstItem="tAw-4L-wGe" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="sKx-Xz-Zd4" userLabel="L - Second View Top"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="Bac-4U-Q1J" secondAttribute="bottom" id="wZF-KY-IXc" userLabel="L - First View Bottom"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="V9n-Et-POg"/>
+                                <exclude reference="dYP-4m-1gR"/>
+                                <exclude reference="53i-ss-Rwl"/>
+                                <exclude reference="bma-Nh-quG"/>
+                                <exclude reference="iKv-nv-uKJ"/>
+                                <exclude reference="sKx-Xz-Zd4"/>
+                                <exclude reference="4so-Ac-u5g"/>
+                                <exclude reference="wZF-KY-IXc"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
-                        <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
+                        <outlet property="ImageViewAspectRatio" destination="A8w-hu-I0j" id="0kj-8U-0Ow"/>
+                        <outlet property="ImageViewHeight" destination="drM-3B-TBq" id="aaY-1U-eyu"/>
+                        <outlet property="ImageViewWidth" destination="oOq-fA-FZA" id="ws5-sv-qBd"/>
+                        <outlet property="L_FirstViewBottom" destination="wZF-KY-IXc" id="bQh-jt-jy9"/>
+                        <outlet property="L_FirstViewLeading" destination="V9n-Et-POg" id="rgO-z7-N2G"/>
+                        <outlet property="L_FirstViewTop" destination="dYP-4m-1gR" id="ay4-g4-aVK"/>
+                        <outlet property="L_FirstViewTrailing_alt" destination="bma-Nh-quG" id="vqt-KH-hbF"/>
+                        <outlet property="L_ImageViewCenterY" destination="XDo-c3-n0V" id="pkM-Of-X7r"/>
+                        <outlet property="L_ImageViewLeading" destination="DKU-ME-NT4" id="H0G-EG-kf7"/>
+                        <outlet property="L_ImageViewTrailing" destination="SZd-hP-oXv" id="9ox-Fj-yQe"/>
+                        <outlet property="L_LabelCenterY" destination="P1g-JJ-UP7" id="iJF-cw-eV7"/>
+                        <outlet property="L_LabelLeading" destination="X1K-TC-npT" id="iJd-nD-JpB"/>
+                        <outlet property="L_LabelTrailing" destination="1Ke-AM-LwP" id="PFQ-zq-RR2"/>
+                        <outlet property="L_SecondViewBottom" destination="4so-Ac-u5g" id="KtD-db-Rya"/>
+                        <outlet property="L_SecondViewLeading" destination="iKv-nv-uKJ" id="ymb-RO-9UU"/>
+                        <outlet property="L_SecondViewTop" destination="sKx-Xz-Zd4" id="LRB-8h-cPJ"/>
+                        <outlet property="L_SecondViewTrailing" destination="53i-ss-Rwl" id="XCd-ES-6de"/>
+                        <outlet property="P_FirstViewBottom_alt" destination="6aR-uh-fDO" id="9iO-OH-qNA"/>
+                        <outlet property="P_FirstViewLeading" destination="sBI-Fd-kYd" id="6zS-sO-ccF"/>
+                        <outlet property="P_FirstViewTop" destination="dFU-zC-fPc" id="axt-oZ-E95"/>
+                        <outlet property="P_FirstViewTrailing" destination="Rds-yG-93Q" id="H9N-hU-Tfd"/>
+                        <outlet property="P_ImageViewBottom" destination="rzK-k4-2UY" id="AkT-Pa-YIA"/>
+                        <outlet property="P_ImageViewCenterX" destination="Twm-JY-4uF" id="Two-wj-giZ"/>
+                        <outlet property="P_ImageViewTop" destination="tBe-id-NXE" id="sCn-Dh-mpF"/>
+                        <outlet property="P_LabelCenterY" destination="4Kc-Vr-UO1" id="9Ja-1q-KrN"/>
+                        <outlet property="P_LabelLeading" destination="5Br-vM-ct6" id="Tem-SH-y3c"/>
+                        <outlet property="P_LabelTrailing" destination="8g8-Js-jFK" id="rbI-Ls-Brh"/>
+                        <outlet property="P_SecondViewBottom" destination="QPs-Vp-qn0" id="ZFk-nU-mcv"/>
+                        <outlet property="P_SecondViewLeading" destination="Z3N-Df-kbL" id="AOi-1o-uOJ"/>
+                        <outlet property="P_SecondViewTop_alt" destination="9RN-4X-w2x" id="daX-AQ-hH7"/>
+                        <outlet property="P_SecondViewTrailing" destination="1yi-6V-2bX" id="TTc-dk-cq5"/>
+                        <outlet property="detailDescriptionLabel" destination="2N6-Lw-ijM" id="U6Q-rV-wma"/>
+                        <outlet property="vegetableImage" destination="brb-nd-xol" id="fru-fp-RWs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708" y="204.64767616191907"/>
+            <point key="canvasLocation" x="1661.9190404797603" y="204"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="vZk-Np-ARD">
@@ -174,6 +279,7 @@
         <scene sceneID="r7l-gg-dq7">
             <objects>
                 <navigationController storyboardIdentifier="vegetableDetailNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vC3-pB-5Vb" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="DjV-YW-jjY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -403,13 +509,13 @@
                                 <rect key="frame" x="16" y="80" width="343" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmI-oo-fbe" userLabel="LocationLabel">
-                                        <rect key="frame" x="8" y="8" width="4" height="21"/>
+                                        <rect key="frame" x="8" y="8" width="4" height="20"/>
                                         <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwR-8t-50E" userLabel="LocationValueLabel">
-                                        <rect key="frame" x="20" y="8" width="285" height="21"/>
+                                        <rect key="frame" x="20" y="8" width="285" height="20"/>
                                         <fontDescription key="fontDescription" name="SFUIDisplay-Thin" family="SF UI Display" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -678,7 +784,7 @@
         <image name="veg_8" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wIo-xi-tSR"/>
         <segue reference="Tll-UG-LXB"/>
+        <segue reference="wIo-xi-tSR"/>
     </inferredMetricsTieBreakers>
 </document>
