@@ -39,6 +39,9 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         self.window = UIWindow(frame: UIScreen.main.bounds)
+        UIApplication.shared.statusBarStyle = .lightContent
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.tintColor = UIColor.green
         
         //Necessary for first run coming from Detail
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
@@ -65,6 +68,7 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         let iPathSection = UserDefaults.standard.integer(forKey: "fruitIndexPathSection")
         let iPathRow = UserDefaults.standard.integer(forKey: "fruitIndexPathRow")
@@ -78,7 +82,6 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
             self.tableView.setContentOffset(point, animated: false)
         }
         
-        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -132,8 +135,10 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
         
         cell.textLabel?.text = objectArray[indexPath.section].sectionObjects[indexPath.row].name
-        cell.textLabel?.textColor = UIColor.darkGray
-                
+        cell.textLabel?.textColor = UIColor.white
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 20)
+        cell.backgroundColor = UIColor.black
+
         return cell
     }
     
@@ -149,6 +154,26 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return objectArray[section].sectionName
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let title: UILabel = UILabel()
+        
+        title.text = objectArray[section].sectionName
+        title.backgroundColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
+        title.font = UIFont.boldSystemFont(ofSize: 14.0)
+        
+        //        for family: String in UIFont.familyNames
+        //        {
+        //            print("\(family)")
+        //            for names: String in UIFont.fontNames(forFamilyName: family)
+        //            {
+        //                print("== \(names)")
+        //            }
+        //        }
+        //        title.font = UIFont(name: "SFUIDisplay-Ultralight", size: 15)
+        title.textAlignment = .center
+        return title
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

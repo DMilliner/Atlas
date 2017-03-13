@@ -21,6 +21,9 @@ class SelectSpecificLocationController: UIViewController, UIPickerViewDataSource
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.statusBarStyle = .lightContent
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.tintColor = UIColor.green
         
         selectLocationLabel.text = "Please select your desired location : "
         locationPicker.dataSource = self
@@ -51,6 +54,10 @@ class SelectSpecificLocationController: UIViewController, UIPickerViewDataSource
     //MARK: Delegates
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: pickerData[row], attributes: [NSForegroundColorAttributeName:UIColor.white])
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

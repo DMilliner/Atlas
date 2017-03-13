@@ -26,24 +26,13 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        
-        locationLabel.text = "\u{1F310} Localized in : "
-        
-        let gradient = CAGradientLayer()
-        gradient.frame = imageSeparatorView.bounds
-        gradient.startPoint = CGPoint(x: 0, y: 0)
-        gradient.endPoint = CGPoint(x: 1, y: 1)
-        gradient.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
-        imageSeparatorView.layer.insertSublayer(gradient, at: 0)
-        
-        let gradient2 = CAGradientLayer()
-        gradient2.frame = imageSeparatorView.bounds
-        gradient2.startPoint = CGPoint(x: 0, y: 0)
-        gradient2.endPoint = CGPoint(x: 1, y: 1)
-        gradient2.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
-        imageSeparator2View.layer.insertSublayer(gradient2, at: 0)
+        UIApplication.shared.statusBarStyle = .lightContent
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.tintColor = UIColor.green
 
-        
+        locationLabel.text = "\u{1F310} Localized in : "
+        locationLabel.textColor = UIColor.white
+
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
 
@@ -60,7 +49,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         
         if let worldRegionExists = UserDefaults.standard.string(forKey: "savedWorldRegion") {
             self.locationLabel.text = emojiByRegion(worldRegionExists) + " Localized in : "
@@ -70,6 +59,40 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             self.locationValueLabel.text = "World"
             UserDefaults.standard.set("World", forKey: "savedWorldRegion")
             UserDefaults.standard.synchronize()
+        }
+        
+        if UIDevice.current.orientation.isLandscape {
+            print(" --- landscape")
+            let gradient = CAGradientLayer()
+            gradient.frame = self.imageSeparatorView.bounds
+            gradient.startPoint = CGPoint(x: 0, y: 0)
+            gradient.endPoint = CGPoint(x: 1, y: 1)
+            gradient.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
+            self.imageSeparatorView.layer.insertSublayer(gradient, at: 0)
+            
+            let gradient2 = CAGradientLayer()
+            gradient2.frame = self.imageSeparatorView.bounds
+            gradient2.startPoint = CGPoint(x: 0, y: 0)
+            gradient2.endPoint = CGPoint(x: 1, y: 1)
+            gradient2.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
+            self.imageSeparator2View.layer.insertSublayer(gradient2, at: 0)
+        }
+        
+        if UIDevice.current.orientation.isPortrait {
+            print(" --- Portrait")
+            let gradient = CAGradientLayer()
+            gradient.frame = self.imageSeparatorView.bounds
+            gradient.startPoint = CGPoint(x: 0, y: 0)
+            gradient.endPoint = CGPoint(x: 1, y: 1)
+            gradient.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
+            self.imageSeparatorView.layer.insertSublayer(gradient, at: 0)
+            
+            let gradient2 = CAGradientLayer()
+            gradient2.frame = self.imageSeparatorView.bounds
+            gradient2.startPoint = CGPoint(x: 0, y: 0)
+            gradient2.endPoint = CGPoint(x: 1, y: 1)
+            gradient2.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
+            self.imageSeparator2View.layer.insertSublayer(gradient2, at: 0)
         }
     }
     
@@ -111,49 +134,12 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         return (isReachable && !needsConnection)
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator){
-        
-        coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
-            
-            if UIDevice.current.orientation.isLandscape {
-                print(" --- landscape")
-                let gradient = CAGradientLayer()
-                gradient.frame = self.imageSeparatorView.bounds
-                gradient.startPoint = CGPoint(x: 0, y: 0)
-                gradient.endPoint = CGPoint(x: 1, y: 1)
-                gradient.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
-                self.imageSeparatorView.layer.insertSublayer(gradient, at: 0)
-                
-                let gradient2 = CAGradientLayer()
-                gradient2.frame = self.imageSeparatorView.bounds
-                gradient2.startPoint = CGPoint(x: 0, y: 0)
-                gradient2.endPoint = CGPoint(x: 1, y: 1)
-                gradient2.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
-                self.imageSeparator2View.layer.insertSublayer(gradient2, at: 0)
-            }
-            
-            if UIDevice.current.orientation.isPortrait {
-                print(" --- Portrait")
-                let gradient = CAGradientLayer()
-                gradient.frame = self.imageSeparatorView.bounds
-                gradient.startPoint = CGPoint(x: 0, y: 0)
-                gradient.endPoint = CGPoint(x: 1, y: 1)
-                gradient.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
-                self.imageSeparatorView.layer.insertSublayer(gradient, at: 0)
-                
-                let gradient2 = CAGradientLayer()
-                gradient2.frame = self.imageSeparatorView.bounds
-                gradient2.startPoint = CGPoint(x: 0, y: 0)
-                gradient2.endPoint = CGPoint(x: 1, y: 1)
-                gradient2.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
-                self.imageSeparator2View.layer.insertSublayer(gradient2, at: 0)
-            }
-            
-//            let orient = UIApplication.shared.statusBarOrientation
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator){
+//        
+//        coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
 //            
-//            switch orient {
-//            case .portrait:
-//                print("Portrait")
+//            if UIDevice.current.orientation.isLandscape {
+//                print(" --- landscape")
 //                let gradient = CAGradientLayer()
 //                gradient.frame = self.imageSeparatorView.bounds
 //                gradient.startPoint = CGPoint(x: 0, y: 0)
@@ -167,31 +153,29 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
 //                gradient2.endPoint = CGPoint(x: 1, y: 1)
 //                gradient2.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
 //                self.imageSeparator2View.layer.insertSublayer(gradient2, at: 0)
-//                break
-//            // Do something
-//            default:
-//                print("LandScape")
-//                // Do something else
-//                let gradient = CAGradientLayer()
-//                gradient.frame = self.imageSeparatorView.bounds
-//                gradient.startPoint = CGPoint(x: 0, y: 0)
-//                gradient.endPoint = CGPoint(x: 1, y: 1)
-//                gradient.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
-//                self.imageSeparatorView.layer.insertSublayer(gradient, at: 0)
-//                
-//                let gradient2 = CAGradientLayer()
-//                gradient2.frame = self.imageSeparatorView.bounds
-//                gradient2.startPoint = CGPoint(x: 0, y: 0)
-//                gradient2.endPoint = CGPoint(x: 1, y: 1)
-//                gradient2.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
-//                self.imageSeparator2View.layer.insertSublayer(gradient2, at: 0)
-//                break
 //            }
-        }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
-            print("rotation completed")
-        })
-        super.viewWillTransition(to: size, with: coordinator)
-    }
+//            
+//            if UIDevice.current.orientation.isPortrait {
+//                print(" --- Portrait")
+//                let gradient = CAGradientLayer()
+//                gradient.frame = self.imageSeparatorView.bounds
+//                gradient.startPoint = CGPoint(x: 0, y: 0)
+//                gradient.endPoint = CGPoint(x: 1, y: 1)
+//                gradient.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
+//                self.imageSeparatorView.layer.insertSublayer(gradient, at: 0)
+//                
+//                let gradient2 = CAGradientLayer()
+//                gradient2.frame = self.imageSeparatorView.bounds
+//                gradient2.startPoint = CGPoint(x: 0, y: 0)
+//                gradient2.endPoint = CGPoint(x: 1, y: 1)
+//                gradient2.colors = [UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1).cgColor, UIColor(red: 164/255, green: 217/255, blue: 57/255, alpha: 1).cgColor]
+//                self.imageSeparator2View.layer.insertSublayer(gradient2, at: 0)
+//            }
+//        }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+//            print("rotation completed")
+//        })
+//        super.viewWillTransition(to: size, with: coordinator)
+//    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -278,10 +262,6 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             
             self.locationLabel.text = emojiRegion + " Localized in : "
             self.locationValueLabel.text = worldRegion + " \(country)"
-            
-            //            for element in Market().getPomeFruitsCompleteListbyLocation(location: worldRegion) {
-            //                print("Sooooooo \(element.name)")
-            //            }
         })
     }
 

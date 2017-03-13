@@ -13,8 +13,8 @@ let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 class CustomTabBarController: UITabBarController, UINavigationControllerDelegate {
     //UIViewController, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource
-    let seasonOrange = UIColor(red: 255/255, green: 165/255, blue: 0/255, alpha: 1)
-    let seasonGrey =  UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1)
+    let seasonGreen = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+    let seasonGrey =  UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1)
     
     var window: UIWindow?
     
@@ -25,7 +25,9 @@ class CustomTabBarController: UITabBarController, UINavigationControllerDelegate
         self.tabBar.layer.borderWidth = 0
         self.tabBar.clipsToBounds = true
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: seasonOrange], for: .selected)
+        UITabBar.appearance().barTintColor = UIColor.black
+
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: seasonGreen], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: seasonGrey], for: .normal)
         
         for item in self.tabBar.items! {
@@ -33,7 +35,7 @@ class CustomTabBarController: UITabBarController, UINavigationControllerDelegate
                 item.image = image.imageWithColor(seasonGrey).withRenderingMode(.alwaysOriginal)
             }
             if let selectedImage = item.selectedImage {
-                item.selectedImage = selectedImage.imageWithColor(seasonOrange).withRenderingMode(.alwaysOriginal)
+                item.selectedImage = selectedImage.imageWithColor(seasonGreen).withRenderingMode(.alwaysOriginal)
             }
         }
     }
