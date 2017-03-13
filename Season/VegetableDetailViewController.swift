@@ -91,14 +91,12 @@ class VegetableDetailViewController: UIViewController {
     }
     
     func rotated() {
-        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation))
-        {
+        if UIDevice.current.orientation.isLandscape {
             print(" --- landscape")
             applyLandScapeConstraint()
         }
         
-        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation))
-        {
+        if UIDevice.current.orientation.isPortrait {
             print(" --- Portrait")
             applyPortraitConstraint()
         }
@@ -127,19 +125,29 @@ class VegetableDetailViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator){
         
         coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
-            
-            let orient = UIApplication.shared.statusBarOrientation
-            
-            switch orient {
-            case .portrait:
-                print("Portrait")
-                self.applyPortraitConstraint()
-                break
-            default:
-                print("LandScape")
+
+            if UIDevice.current.orientation.isLandscape {
+                print(" --- landscape")
                 self.applyLandScapeConstraint()
-                break
             }
+            
+            if UIDevice.current.orientation.isPortrait {
+                print(" --- Portrait")
+                self.applyPortraitConstraint()
+            }
+            
+//            let orient = UIApplication.shared.statusBarOrientation
+//            
+//            switch orient {
+//            case .portrait:
+//                print("Portrait")
+//                self.applyPortraitConstraint()
+//                break
+//            default:
+//                print("LandScape")
+//                self.applyLandScapeConstraint()
+//                break
+//            }
         }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
             print("rotation completed")
         })

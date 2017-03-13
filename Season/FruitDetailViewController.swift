@@ -96,14 +96,12 @@ class FruitDetailViewController: UIViewController {
     }
     
     func rotated() {
-        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation))
-        {
+        if UIDevice.current.orientation.isLandscape {
             print(" --- landscape")
             applyFruitLandScapeConstraint()
         }
         
-        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation))
-        {
+        if UIDevice.current.orientation.isPortrait{
             print(" --- Portrait")
             applyFruitPortraitConstraint()
         }
@@ -157,16 +155,23 @@ class FruitDetailViewController: UIViewController {
         
         coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
             
-            switch UIApplication.shared.statusBarOrientation {
-            case .portrait:
-                print("Portrait")
-                self.applyFruitPortraitConstraint()
-                break
-            default:
-                print("LandScape")
+            if UIDevice.current.orientation.isLandscape {
                 self.applyFruitLandScapeConstraint()
-                break
+
+            } else if UIDevice.current.orientation.isPortrait{
+                self.applyFruitPortraitConstraint()
             }
+            
+//            switch UIApplication.shared.statusBarOrientation {
+//            case .portrait:
+//                print("Portrait")
+//                self.applyFruitPortraitConstraint()
+//                break
+//            default:
+//                print("LandScape")
+//                self.applyFruitLandScapeConstraint()
+//                break
+//            }
         }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
             print("rotation completed")
         })
