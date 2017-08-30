@@ -63,10 +63,55 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
             objectArray.append(Objects(sectionName: key, sectionObjects: value))
         }
         
+        let longPressGesture:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(FruitsViewController.handleLongPress(_:)))
+        longPressGesture.minimumPressDuration = 1.0 // 1 second press
+        longPressGesture.delegate = self as? UIGestureRecognizerDelegate
+        self.tableView.addGestureRecognizer(longPressGesture)
+        
 //        if let split = self.splitViewController {
 //            let controllers = split.viewControllers
 //            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? FruitDetailViewController
 //        }
+        dictionary.removeAll()
+        objectArray.removeAll()
+        dictionary = getSortedFruitsList()
+        for (key, value) in dictionary {
+            objectArray.append(Objects(sectionName: key, sectionObjects: value))
+            print("\(objectArray.count)")
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    func handleLongPress(_ longPressGestureRecognizer: UILongPressGestureRecognizer) {
+        
+        let p = longPressGestureRecognizer.location(in: self.tableView)
+        let indexPath = self.tableView.indexPathForRow(at: p)
+        
+        if indexPath == nil {
+            print("Long press on table view, not row.")
+        } else if (longPressGestureRecognizer.state == UIGestureRecognizerState.began) {
+            print("Long press on row, at \(indexPath!.row)")
+            
+            var name: String = objectArray[indexPath!.section].sectionObjects[indexPath!.row].name
+            let arr = name.characters.split{" \u{00A0}".characters.contains($0)}.map(String.init)
+            var finalName: String = ""
+            finalName = arr[0]
+            
+            if(arr.count >= 2){
+                for i in 1..<arr.count{
+                    finalName = finalName+"_"+arr[i]
+                }
+            }
+            
+            if(finalName == "Orange"){
+                finalName = "Orange_(fruit)"
+            }
+            
+            UIApplication.shared.openURL(NSURL(string: "https://en.wikipedia.org/wiki/" + finalName)! as URL)
+            tableView.deselectRow(at: indexPath!, animated: true)
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,17 +128,6 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
             let point = CGPoint(x: rect.origin.x, y: rect.origin.y-25)
             self.tableView.setContentOffset(point, animated: false)
         }
-        
-        dictionary.removeAll()
-        objectArray.removeAll()
-        dictionary = getSortedFruitsList()
-        for (key, value) in dictionary {
-            objectArray.append(Objects(sectionName: key, sectionObjects: value))
-            print("\(objectArray.count)")
-        }
-        
-        self.tableView.reloadData()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

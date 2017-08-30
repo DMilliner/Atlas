@@ -231,7 +231,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
             var placeMark: CLPlacemark!
             
-            if(self.isInternetAvailable()){
+            if(self.isInternetAvailable() && placemarks?[0] != nil){
                 placeMark = placemarks?[0]
                 print("dictionary = \(String(describing: placeMark.addressDictionary))")
                 //let region = (placeMark.timeZone?.identifier)! as String

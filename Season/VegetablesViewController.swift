@@ -163,7 +163,18 @@ class VegetablesViewController: UIViewController, UINavigationControllerDelegate
         UserDefaults.standard.set(indexPath.row, forKey: "vegetableIndexPathRow")
         UserDefaults.standard.synchronize()
         print("Saved")
+        
+        var name: String = objectArray[indexPath.section].sectionObjects[indexPath.row].name
+        let arr = name.characters.split{" \u{00A0}".characters.contains($0)}.map(String.init)
+        var finalName: String = arr[0]
+        if(arr.count >= 2){
+            for i in 1..<arr.count{
+                finalName = finalName+"_"+arr[i]
+            }
+        }
 
+        UIApplication.shared.openURL(NSURL(string: "https://en.wikipedia.org/wiki/" + finalName)! as URL)
+        tableView.deselectRow(at: indexPath, animated: true)
 //        performSegue(withIdentifier: "showVegetableDetail", sender: self)
     }
     
@@ -224,7 +235,7 @@ class VegetablesViewController: UIViewController, UINavigationControllerDelegate
         unsortedVegetablesOnlyList.append(Vegetables.init(name: "Asparagus",        startSeason: 5, endSeason: 6)!)
         unsortedVegetablesOnlyList.append(Vegetables.init(name: "Amaranth",         startSeason: 1, endSeason: 4)!)//
         unsortedVegetablesOnlyList.append(Vegetables.init(name: "Bok choy",         startSeason: 12, endSeason: 2)!)
-        unsortedVegetablesOnlyList.append(Vegetables.init(name: "Romanesco Broccoli", startSeason: 9, endSeason: 12)!)
+        unsortedVegetablesOnlyList.append(Vegetables.init(name: "Romanesco broccoli", startSeason: 9, endSeason: 12)!)
         unsortedVegetablesOnlyList.append(Vegetables.init(name: "Broccoli",         startSeason: 6, endSeason: 11)!)
         unsortedVegetablesOnlyList.append(Vegetables.init(name: "Brussels sprouts", startSeason: 9, endSeason: 3)!)
         unsortedVegetablesOnlyList.append(Vegetables.init(name: "Cabbage",          startSeason: 1, endSeason: 12)!)
@@ -242,7 +253,7 @@ class VegetablesViewController: UIViewController, UINavigationControllerDelegate
         unsortedVegetablesOnlyList.append(Vegetables.init(name: "Fennel",           startSeason: 7, endSeason: 10)!)//
         unsortedVegetablesOnlyList.append(Vegetables.init(name: "Kale",             startSeason: 9, endSeason: 3)!)
         unsortedVegetablesOnlyList.append(Vegetables.init(name: "Kohlrabi",         startSeason: 7, endSeason: 10)!)
-        unsortedVegetablesOnlyList.append(Vegetables.init(name: "Lettuce Lactuca sativa", startSeason: 1, endSeason: 12)!)
+        unsortedVegetablesOnlyList.append(Vegetables.init(name: "Lettuce", startSeason: 1, endSeason: 12)!)
         unsortedVegetablesOnlyList.append(Vegetables.init(name: "Mushrooms",        startSeason: 1, endSeason: 12)!)
         unsortedVegetablesOnlyList.append(Vegetables.init(name: "Mustard greens",   startSeason: 1, endSeason: 4)!)//
         unsortedVegetablesOnlyList.append(Vegetables.init(name: "Nettles",          startSeason: 1, endSeason: 4)!)//
@@ -302,7 +313,7 @@ class VegetablesViewController: UIViewController, UINavigationControllerDelegate
         // -------------- Onions --------------
         unsortedOnionsOnlyList.append(Vegetables.init(name: "Chives",              startSeason: 6, endSeason: 10)!)
         unsortedOnionsOnlyList.append(Vegetables.init(name: "Garlic",              startSeason: 1, endSeason: 4)!)//
-        unsortedOnionsOnlyList.append(Vegetables.init(name: "Leek Allium porrum",  startSeason: 9, endSeason: 3)!)
+        unsortedOnionsOnlyList.append(Vegetables.init(name: "Leek",                startSeason: 9, endSeason: 3)!)
         unsortedOnionsOnlyList.append(Vegetables.init(name: "Onion",               startSeason: 8, endSeason: 10)!)
         unsortedOnionsOnlyList.append(Vegetables.init(name: "Shallot",             startSeason: 6, endSeason: 8)!)
         unsortedOnionsOnlyList.append(Vegetables.init(name: "Green onion",         startSeason: 1, endSeason: 4)!)//
@@ -328,10 +339,10 @@ class VegetablesViewController: UIViewController, UINavigationControllerDelegate
         
         // -------------- Radishes --------------
         unsortedRadishesOnlyList.append(Vegetables.init(name: "Rutabaga",           startSeason: 1, endSeason: 12)!)
-        unsortedRootVegetablesOnlyList.append(Vegetables.init(name: "Turnip",       startSeason: 1, endSeason: 4)!)
-        unsortedRootVegetablesOnlyList.append(Vegetables.init(name: "Wasabi",       startSeason: 1, endSeason: 4)!)
-        unsortedRootVegetablesOnlyList.append(Vegetables.init(name: "Horseradish",  startSeason: 1, endSeason: 4)!)
-        unsortedRootVegetablesOnlyList.append(Vegetables.init(name: "White radish", startSeason: 1, endSeason: 4)!)
+        unsortedRadishesOnlyList.append(Vegetables.init(name: "Turnip",             startSeason: 1, endSeason: 12)!)
+        unsortedRadishesOnlyList.append(Vegetables.init(name: "Wasabi",             startSeason: 1, endSeason: 12)!)
+        unsortedRadishesOnlyList.append(Vegetables.init(name: "Horseradish",        startSeason: 1, endSeason: 12)!)
+        unsortedRadishesOnlyList.append(Vegetables.init(name: "White radish",       startSeason: 1, endSeason: 12)!)
         
         // -------------- Suqashes --------------
         unsortedSquashesOnlyList.append(Vegetables.init(name: "Acorn squash",       startSeason: 1, endSeason: 12)!)
