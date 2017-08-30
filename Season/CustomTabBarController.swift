@@ -12,8 +12,7 @@ import UIKit
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 class CustomTabBarController: UITabBarController, UINavigationControllerDelegate {
-    //UIViewController, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource
-    let seasonGreen = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+    let seasonGreen = UIColor(red: 54/255, green: 100/255, blue: 54/255, alpha: 1)
     let seasonGrey =  UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1)
     
     var window: UIWindow?

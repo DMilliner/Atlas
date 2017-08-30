@@ -56,6 +56,8 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
         tableView.delegate = self
         tableView.dataSource = self
         
+        dictionary.removeAll()
+        objectArray.removeAll()
         dictionary = getSortedFruitsList()
         for (key, value) in dictionary {
             objectArray.append(Objects(sectionName: key, sectionObjects: value))
@@ -82,6 +84,16 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
             self.tableView.setContentOffset(point, animated: false)
         }
         
+        dictionary.removeAll()
+        objectArray.removeAll()
+        dictionary = getSortedFruitsList()
+        for (key, value) in dictionary {
+            objectArray.append(Objects(sectionName: key, sectionObjects: value))
+            print("\(objectArray.count)")
+        }
+        
+        self.tableView.reloadData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,18 +103,6 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    
-    func getSeasonalFruits(_ unsortedFruits: [Fruits]) -> [Fruits]{
-        let currentMonth = Calendar.current.component(.month, from: Date())
-        var sl:[Fruits] = []
-        for potentialSeasonalFruit in unsortedFruits {
-            if(currentMonth>=potentialSeasonalFruit.startSeason && currentMonth<=potentialSeasonalFruit.endSeason){
-                sl.append(potentialSeasonalFruit)
-            }
-        }
-        return sl
     }
     
     // MARK: - Segues
@@ -181,93 +181,6 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     func getSortedFruitsList() -> [String:[Fruits]]{
-        seasonalFruitsList.removeAll()
-        
-        pomeFruitsOnlyList.removeAll()
-        stoneFruitsOnlyList.removeAll()
-        temperateFruitsOnlyList.removeAll()
-        berriesOnlyList.removeAll()
-        mediterraneanNativesOnlyList.removeAll()
-        citrusOnlyList.removeAll()
-        subtropicalfruitsOnlyList.removeAll()
-        tropicalFruitsOnlyList.removeAll()
-        
-        var unsortedPomeFruitsOnlyList: [Fruits] = []
-        var unsortedStoneFruitsOnlyList: [Fruits] = []
-        var unsortedTemperateFruitsOnlyList: [Fruits] = []
-        var unsortedBerriesOnlyList: [Fruits] = []
-        var unsortedMediterraneanNativesOnlyList: [Fruits] = []
-        var unsortedCitrusOnlyList: [Fruits] = []
-        var unsortedSubtropicalfruitsOnlyList: [Fruits] = []
-        var unsortedTropicalFruitsOnlyList: [Fruits] = []
-        
-        
-        //14 doubles....
-        
-        unsortedPomeFruitsOnlyList = Market().getPomeFruitsCompleteListbyLocation(location: "Europe")
-        unsortedStoneFruitsOnlyList = Market().getStoneFruitsCompleteListbyLocation(location: "Europe")
-        unsortedTemperateFruitsOnlyList = Market().getTemperateFruitsCompleteListbyLocation(location: "Europe")
-        unsortedBerriesOnlyList = Market().getBerriesCompleteListbyLocation(location: "Europe")
-        unsortedMediterraneanNativesOnlyList = Market().getMediterraneanNativeFruitsCompleteListbyLocation(location: "Europe")
-        unsortedCitrusOnlyList = Market().getCitrusCompleteListbyLocation(location: "Europe")
-        unsortedSubtropicalfruitsOnlyList = Market().getSubTropicalFruitsCompleteListbyLocation(location: "Europe")
-        unsortedTropicalFruitsOnlyList = Market().getTropicalFruitsCompleteListbyLocation(location: "Europe")
-        
-        // -------------- Sorting by season --------------
-        pomeFruitsOnlyList = getSeasonalFruits(unsortedPomeFruitsOnlyList)
-        stoneFruitsOnlyList = getSeasonalFruits(unsortedStoneFruitsOnlyList)
-        temperateFruitsOnlyList = getSeasonalFruits(unsortedTemperateFruitsOnlyList)
-        berriesOnlyList = getSeasonalFruits(unsortedBerriesOnlyList)
-        mediterraneanNativesOnlyList = getSeasonalFruits(unsortedMediterraneanNativesOnlyList)
-        citrusOnlyList = getSeasonalFruits(unsortedCitrusOnlyList)
-        subtropicalfruitsOnlyList = getSeasonalFruits(unsortedSubtropicalfruitsOnlyList)
-        tropicalFruitsOnlyList = getSeasonalFruits(unsortedTropicalFruitsOnlyList)
-        
-        
-        // -------------- Get the whole list of seasonal vegetables --------------
-        seasonalFruitsList.append(contentsOf: pomeFruitsOnlyList)
-        seasonalFruitsList.append(contentsOf: stoneFruitsOnlyList)
-        seasonalFruitsList.append(contentsOf: temperateFruitsOnlyList)
-        seasonalFruitsList.append(contentsOf: berriesOnlyList)
-        seasonalFruitsList.append(contentsOf: mediterraneanNativesOnlyList)
-        seasonalFruitsList.append(contentsOf: citrusOnlyList)
-        seasonalFruitsList.append(contentsOf: subtropicalfruitsOnlyList)
-        seasonalFruitsList.append(contentsOf: tropicalFruitsOnlyList)
-        
-        var dic = ["Pome fruits": pomeFruitsOnlyList,
-                   "Stone fruits": stoneFruitsOnlyList,
-                   "Other temperate fruits": temperateFruitsOnlyList,
-                   "Berries": berriesOnlyList,
-                   "Mediterranean natives": mediterraneanNativesOnlyList,
-                   "Citrus": citrusOnlyList,
-                   "Other subtropical fruits": subtropicalfruitsOnlyList,
-                   "Tropical fruits": tropicalFruitsOnlyList]
-        
-        if(pomeFruitsOnlyList.isEmpty){
-            dic.removeValue(forKey: "Pome fruits")
-        }
-        if(stoneFruitsOnlyList.isEmpty){
-            dic.removeValue(forKey: "Stone fruits")
-        }
-        if(temperateFruitsOnlyList.isEmpty){
-            dic.removeValue(forKey: "Other temperate fruits")
-        }
-        if(berriesOnlyList.isEmpty){
-            dic.removeValue(forKey: "Berries")
-        }
-        if(mediterraneanNativesOnlyList.isEmpty){
-            dic.removeValue(forKey: "Mediterranean natives")
-        }
-        if(citrusOnlyList.isEmpty){
-            dic.removeValue(forKey: "Citrus")
-        }
-        if(subtropicalfruitsOnlyList.isEmpty){
-            dic.removeValue(forKey: "Other subtropical fruits")
-        }
-        if(tropicalFruitsOnlyList.isEmpty){
-            dic.removeValue(forKey: "Tropical fruits")
-        }
-        
-        return dic
+        return Market().getSeasonalFruitsCompleteListByLocation(location: UserDefaults.standard.string(forKey: "savedWorldRegion")!)
     }
 }
