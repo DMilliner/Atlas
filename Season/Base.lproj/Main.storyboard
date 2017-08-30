@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KqX-cX-Max">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KqX-cX-Max">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -71,9 +71,6 @@
                                             <accessibilityTraits key="traits" none="YES"/>
                                         </accessibility>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <connections>
-                                            <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showVegetableDetail" id="62o-i1-zbl"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -99,6 +96,7 @@
         <!--vegetableDetail-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="vegetableDetail" title="vegetableDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JEX-9P-axG" customClass="VegetableDetailViewController" customModule="Season" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
@@ -162,7 +160,6 @@
                         <outlet property="vegetableImage" destination="GDx-p0-4TX" id="Kfs-fa-ikV"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1661.9190404797603" y="204"/>
         </scene>
@@ -193,7 +190,6 @@
                     <toolbarItems/>
                     <connections>
                         <segue destination="RMx-3f-FxP" kind="relationship" relationship="masterViewController" id="BlO-5A-QYV"/>
-                        <segue destination="vC3-pB-5Vb" kind="relationship" relationship="detailViewController" id="Tll-UG-LXB"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Oi-B1e" sceneMemberID="firstResponder"/>
@@ -203,6 +199,7 @@
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="vegetableDetailNC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vC3-pB-5Vb" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="DjV-YW-jjY">
@@ -213,7 +210,6 @@
                         <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="GKi-kA-LjT"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-40" y="205"/>
         </scene>
@@ -242,6 +238,7 @@
         <!--fruitDetail-->
         <scene sceneID="wjF-xP-Elf">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pXl-FS-3Pe" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="fruitDetail" title="fruitDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7e6-TW-wVa" customClass="FruitDetailViewController" customModule="Season" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jBO-Td-UCw"/>
@@ -300,7 +297,6 @@
                         <outlet property="fruitNameLabel" destination="iOW-Up-1Sq" id="VKm-f1-fcF"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pXl-FS-3Pe" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1049" y="1738"/>
         </scene>
@@ -314,7 +310,6 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <segue destination="f92-Of-Kco" kind="relationship" relationship="masterViewController" id="Z65-fh-b0q"/>
-                        <segue destination="97f-Re-r57" kind="relationship" relationship="detailViewController" id="EiG-4k-QP8"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUu-7W-irC" sceneMemberID="firstResponder"/>
@@ -362,7 +357,7 @@
                                 <rect key="frame" x="16" y="80" width="343" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Localized in :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmI-oo-fbe" userLabel="LocationLabel">
-                                        <rect key="frame" x="16" y="8" width="100" height="25.5"/>
+                                        <rect key="frame" x="16" y="8" width="97.5" height="25.5"/>
                                         <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -379,7 +374,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Europe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwR-8t-50E" userLabel="LocationValueLabel">
-                                        <rect key="frame" x="124" y="8" width="181" height="26"/>
+                                        <rect key="frame" x="121.5" y="8" width="183.5" height="26"/>
                                         <fontDescription key="fontDescription" name="SFUIDisplay-Thin" family="SF UI Display" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -465,6 +460,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Aya-2y-pRX">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aw2-Wc-r3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="fruitDetailNC" id="97f-Re-r57" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Nu5-h8-BbF">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -474,7 +470,6 @@
                         <segue destination="7e6-TW-wVa" kind="relationship" relationship="rootViewController" id="2Sa-rh-25s"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Aw2-Wc-r3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-50" y="1739"/>
         </scene>
@@ -600,9 +595,6 @@
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <connections>
-                                            <segue destination="97f-Re-r57" kind="showDetail" identifier="showFruitDetail" id="wIo-xi-tSR"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -630,8 +622,4 @@
         <image name="home" width="30" height="30"/>
         <image name="veg_8" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="wIo-xi-tSR"/>
-        <segue reference="62o-i1-zbl"/>
-    </inferredMetricsTieBreakers>
 </document>

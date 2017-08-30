@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
@@ -50,26 +50,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    // MARK: - Split view
-
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
-        
-        print("-AppDelegate splitViewController-")
-//        guard let secondaryAsFruitNavController = secondaryViewController as? UINavigationController else { return false }
-//        guard let topAsFruitDetailController = secondaryAsFruitNavController.topViewController as? FruitDetailViewController else { return false }
+//    // MARK: - Split view
+//
+//    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
 //        
-//        guard let secondaryAsVegetableNavController = secondaryViewController as? UINavigationController else { return false }
-//        guard let topAsVegetableDetailController = secondaryAsVegetableNavController.topViewController as? VegetableDetailViewController else { return false }
-//        
-//        if topAsVegetableDetailController.detailItem == nil {
-//            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
-//            return true
-//        } else if topAsFruitDetailController.detailItem == nil {
-//            return true
-//        } else {
-//            return false
-//        }
-        return true
-    }
+//        print("-AppDelegate splitViewController-")
+////        guard let secondaryAsFruitNavController = secondaryViewController as? UINavigationController else { return false }
+////        guard let topAsFruitDetailController = secondaryAsFruitNavController.topViewController as? FruitDetailViewController else { return false }
+////        
+////        guard let secondaryAsVegetableNavController = secondaryViewController as? UINavigationController else { return false }
+////        guard let topAsVegetableDetailController = secondaryAsVegetableNavController.topViewController as? VegetableDetailViewController else { return false }
+////        
+////        if topAsVegetableDetailController.detailItem == nil {
+////            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+////            return true
+////        } else if topAsFruitDetailController.detailItem == nil {
+////            return true
+////        } else {
+////            return false
+////        }
+//        return true
+//    }
 }
 

@@ -14,7 +14,7 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
     
     @IBOutlet var tableView: UITableView!
     
-    var detailViewController: FruitDetailViewController? = nil
+//    var detailViewController: FruitDetailViewController? = nil
     let cellReuseIdentifier = "cell"
     
     var dictionary: [String:[Fruits]] = [:]
@@ -63,10 +63,10 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
             objectArray.append(Objects(sectionName: key, sectionObjects: value))
         }
         
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? FruitDetailViewController
-        }
+//        if let split = self.splitViewController {
+//            let controllers = split.viewControllers
+//            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? FruitDetailViewController
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -107,21 +107,21 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
     
     // MARK: - Segues
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showFruitDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                if let cell = self.tableView.cellForRow(at: indexPath) {
-                    
-                    let controller = (segue.destination as! UINavigationController).topViewController as! FruitDetailViewController
-                    controller.fruitNameItem = cell.textLabel?.text
-                    controller.fruitSectionItem = objectArray[indexPath.section].sectionName
-                    controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-                    controller.navigationItem.leftItemsSupplementBackButton = true
-                    tableView.deselectRow(at: indexPath, animated: true)
-                }
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showFruitDetail" {
+//            if let indexPath = self.tableView.indexPathForSelectedRow {
+//                if let cell = self.tableView.cellForRow(at: indexPath) {
+//                    
+//                    let controller = (segue.destination as! UINavigationController).topViewController as! FruitDetailViewController
+//                    controller.fruitNameItem = cell.textLabel?.text
+//                    controller.fruitSectionItem = objectArray[indexPath.section].sectionName
+//                    controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+//                    controller.navigationItem.leftItemsSupplementBackButton = true
+//                    tableView.deselectRow(at: indexPath, animated: true)
+//                }
+//            }
+//        }
+//    }
     
     // MARK: - Table View
     
@@ -149,7 +149,7 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
         UserDefaults.standard.set(indexPath.row, forKey: "fruitIndexPathRow")
         UserDefaults.standard.synchronize()
         
-        performSegue(withIdentifier: "showFruitDetail", sender: self)
+//        performSegue(withIdentifier: "showFruitDetail", sender: self)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

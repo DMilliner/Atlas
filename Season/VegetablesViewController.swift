@@ -15,7 +15,7 @@ class VegetablesViewController: UIViewController, UINavigationControllerDelegate
     // MARK: Properties
     @IBOutlet var tableView: UITableView!
     
-    var detailViewController: VegetableDetailViewController? = nil
+//    var detailViewController: VegetableDetailViewController? = nil
     let cellReuseIdentifier = "cell"
     
     var dictionary: [String:[Vegetables]] = [:]
@@ -63,10 +63,10 @@ class VegetablesViewController: UIViewController, UINavigationControllerDelegate
             objectArray.append(Objects(sectionName: key, sectionObjects: value))
         }
         
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? VegetableDetailViewController
-        }
+//        if let split = self.splitViewController {
+//            let controllers = split.viewControllers
+//            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? VegetableDetailViewController
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -118,20 +118,20 @@ class VegetablesViewController: UIViewController, UINavigationControllerDelegate
     
     // MARK: - Segues
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showVegetableDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                if let cell = self.tableView.cellForRow(at: indexPath) {
-                    print("Content  Name " + (dictionary[objectArray[indexPath.section].sectionName]?[indexPath.row].name)!)
-                    let controller = (segue.destination as! UINavigationController).topViewController as! VegetableDetailViewController
-                    controller.detailItem = cell.textLabel?.text
-                    controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-                    controller.navigationItem.leftItemsSupplementBackButton = true
-                    tableView.deselectRow(at: indexPath, animated: false)
-                }
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showVegetableDetail" {
+//            if let indexPath = self.tableView.indexPathForSelectedRow {
+//                if let cell = self.tableView.cellForRow(at: indexPath) {
+//                    print("Content  Name " + (dictionary[objectArray[indexPath.section].sectionName]?[indexPath.row].name)!)
+//                    let controller = (segue.destination as! UINavigationController).topViewController as! VegetableDetailViewController
+//                    controller.detailItem = cell.textLabel?.text
+//                    controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+//                    controller.navigationItem.leftItemsSupplementBackButton = true
+//                    tableView.deselectRow(at: indexPath, animated: false)
+//                }
+//            }
+//        }
+//    }
     
     // MARK: - Table View
     
@@ -164,7 +164,7 @@ class VegetablesViewController: UIViewController, UINavigationControllerDelegate
         UserDefaults.standard.synchronize()
         print("Saved")
 
-        performSegue(withIdentifier: "showVegetableDetail", sender: self)
+//        performSegue(withIdentifier: "showVegetableDetail", sender: self)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

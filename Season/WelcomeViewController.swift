@@ -233,7 +233,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             
             if(self.isInternetAvailable()){
                 placeMark = placemarks?[0]
-                print("dictionary = \(placeMark.addressDictionary)")
+                print("dictionary = \(String(describing: placeMark.addressDictionary))")
                 //let region = (placeMark.timeZone?.identifier)! as String
                 
                 region = (placeMark.timeZone?.description)!
