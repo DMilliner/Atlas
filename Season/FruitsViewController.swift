@@ -13,6 +13,7 @@ class FruitsViewController: UIViewController, UINavigationControllerDelegate, UI
     var window: UIWindow?
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var webView: UIWebView!
     
 //    var detailViewController: FruitDetailViewController? = nil
     let cellReuseIdentifier = "cell"

@@ -1,0 +1,138 @@
+---------------- Vegetables ----------------
+"Artichoke"
+"Arugula"
+"Asparagus"
+"Aubergine" (UK) = "Eggplant" (US)
+"Amaranth"
+"Bok choy" (known as Bok choy in UK and US)
+"Broccoflower" (a hybrid)
+"Broccoli"
+"Brussels sprouts"
+"Cabbage"
+"Calabrese"
+"Carrots"
+"Cauliflower"
+"Celery"
+"Chard"
+"Collard greens"
+"Corn salad"
+"Endive"
+"Fiddleheads" (young coiled fern leaves)
+"Frisee"
+"Fennel"
+"Kale"
+"Kohlrabi"
+"Lettuce Lactuca sativa"
+"Maize" (UK) = "Corn" (US)
+"Mushrooms" (actually a fungus, not a plant)
+"Mustard greens"
+"Nettles"
+"New Zealand spinach"
+"Okra"
+"Parsley"
+"Radicchio"
+"Rhubarb"
+"Salsify" (usually Purple Salsify or Oyster Plant)
+"Skirret"
+"Spinach"
+"Topinambur"
+"Tat soi"
+"Tomato" (biologically a fruit, but taxed as a vegetable)
+"Turnip greens"
+"Water chestnut"
+"Watercress"
+"Zucchini"
+
+---------------- Legumes ----------------
+"Alfalfa sprouts"
+"Azuki beans" (or adzuki)
+"Bean sprouts"
+"Black beans"
+"Black-eyed peas"
+"Borlotti bean"
+"Broad beans"
+"Chickpeas", "Garbanzos", or "Ceci beans"
+"Green beans"
+"Kidney beans"
+"Lentils"
+"Lima beans" or "Butter bean"
+"Mung beans"
+"Navy beans"
+"Pinto beans"
+"Runner beans"
+"Split peas"
+"Soy beans"
+"Peas"
+
+------------------------------ Herbs and spices ----------------
+"Anise"
+"Basil"
+"Caraway"
+"Cilantro "seeds are "Coriander"
+"Chamomile"
+"Dill"
+"Fennel"
+"Lavender"
+"Lemon Grass"
+"Marjoram"
+"Oregano"
+"Parsley"
+"Rosemary"
+"Sage"
+"Thyme"
+--------------------------------- Onion family ----------------
+"Chives"
+"Garlic"
+"Leek Allium porrum"
+"Onion"
+"Shallot"
+"Spring onion" (UK) == "Green onion" (US) == "Scallion"
+
+--------------------------------- Peppers ----------------
+"Green pepper" and "Red pepper" == "bell pepper" == "pimento"
+"Chili pepper" == "Capsicum"
+"Jalapeño"
+"Habanero"
+"Paprika"
+"Tabasco pepper"
+"Cayenne pepper" 
+
+--------------------------------- Root vegetables ---------------------------------
+"Beetroot" (UK) == "Beet" (US)
+"mangel-wurzel": a variety of beet used mostly as cattlefeed
+"Carrot"
+"Celeriac"
+"Daikon"
+"Ginger"
+"Parsnip"
+"Rutabaga"
+"Turnip"
+
+--------------------------------- Radish ---------------------------------
+"Swede" (UK) == "Rutabaga" (US)
+"Turnip"
+"Wasabi"
+"Horseradish"
+"White radish"
+--------------------------------- Squashes ---------------------------------
+"Acorn squash"
+"Butternut squash"
+"Banana squash"
+"Courgette" (UK) == "Zucchini" (US)
+"Cucumber" (biologically fruits, but taxed as vegetables)
+"Delicata"
+"Gem squash"
+"Hubbard squash"
+"Marrow" (UK) == "Squash" (US) Cucurbita maxima
+"Patty pans"
+"Pumpkin"
+"Spaghetti squash"
+
+--------------------------------- Tubers ---------------------------------
+"Jicama"
+"Jerusalem artichoke"
+"Potato"
+"Sunchokes"
+"Sweet potato"
+"Taro"
+"Yam"

@@ -124,7 +124,7 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
         
-        for index in 0...5{
+        for index in 0...9{
             let randomIndex = Int(arc4random_uniform(UInt32(array.count)))
             print("\(index) -- \(array[randomIndex])")
             selectedArray.append(array[randomIndex])

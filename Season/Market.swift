@@ -51,32 +51,32 @@ class Market {
         switch location {
         case "Europe":
             unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Apple",        startSeason: 1, endSeason: 11)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Pear",     startSeason: 1, endSeason: 4)!)
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Pear",         startSeason: 1, endSeason: 4)!)
             break
         
         case "North America":
             unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Apple",        startSeason: 1, endSeason: 11)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Pear",     startSeason: 1, endSeason: 4)!)
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Pear",         startSeason: 1, endSeason: 4)!)
             break
         
         case "South America":
             unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Apple",        startSeason: 1, endSeason: 11)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Pear",     startSeason: 1, endSeason: 4)!)
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Pear",         startSeason: 1, endSeason: 4)!)
             break
         
         case "Asia":
             unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Apple",        startSeason: 1, endSeason: 11)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Pear",     startSeason: 1, endSeason: 4)!)
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Pear",         startSeason: 1, endSeason: 4)!)
             break
         
         case "Africa":
             unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Apple",        startSeason: 1, endSeason: 11)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Pear",     startSeason: 1, endSeason: 4)!)
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Pear",         startSeason: 1, endSeason: 4)!)
             break
         
         case "Oceania":
             unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Apple",        startSeason: 1, endSeason: 11)!)
-            unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Pear",     startSeason: 1, endSeason: 4)!)
+            unsortedPomeFruitsOnlyList.append(Fruits.init(name:"Pear",         startSeason: 1, endSeason: 4)!)
             break
             
         case "World":
